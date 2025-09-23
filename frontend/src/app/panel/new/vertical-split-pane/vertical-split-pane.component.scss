@@ -1,0 +1,39 @@
+
+.container{
+  display: flex;
+  width:100%;
+  flex: 0 0 auto;
+  //border: 2px solid purple;
+}
+
+.divider-vertical-line {
+  flex-basis: 2px;
+  background-color: black;
+  cursor: col-resize;
+}
+
+.left {
+  //background: yellow;
+  display: block;
+  margin-left: 2px;
+  flex-grow: 0;      /* nie rośnie */
+  flex-shrink: 0;    /* nie kurczy się */
+  flex-basis: 60px; /* dokładnie 60px */
+  overflow: hidden;
+}
+
+.left * {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.truncate { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+
+.right{
+  flex-grow: 1;   /* zajmuje wszystko co zostało */
+  flex-shrink: 1; /* może się kurczyć przy braku miejsca */
+  flex-basis: 0;  /* start od 0, reszta z grow */
+  min-width: 0;   /* ważne! pozwala się ścisnąć przy overflow */
+}

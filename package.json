@@ -1,0 +1,16 @@
+{
+  "name": "rx-vision-root",
+  "private": true,
+  "workspaces": [
+    "demo-app",
+    "chrome-devtools",
+    "frontend",
+    "api"
+  ],
+  "scripts": {
+    "build": "npm -w frontend run build && npm -w chrome-devtools run build",
+    "build:api": "npm -w api run build",
+    "publish:api": "npm publish -w api --access public",
+    "start:demo": "npm -w demo-app start"
+  }
+}

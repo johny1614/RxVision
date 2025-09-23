@@ -1,0 +1,10 @@
+<div class="app-panel">
+  <div class="header">
+    <h1>Welcome to RxVision!</h1>
+    <button (click)="onWindowSelectorChange()">Click to change selector</button>
+    <button>Pause</button>
+  </div>
+  <div class="content">
+    <app-panel-emissions-timeline [streamsCircles]="streamsCircles"></app-panel-emissions-timeline>
+  </div>
+</div>

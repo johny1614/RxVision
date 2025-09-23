@@ -1,0 +1,11 @@
+@if (isGroupingMarker(marker)) {
+  <app-grouping-marker
+    [color]="color"
+    [marker]="marker"
+  />
+} @else {
+  <app-x-marker
+    [marker]="marker"
+    [color]="color"
+  />
+}

@@ -1,0 +1,40 @@
+<ng-container *ngFor="let timelineRange of timelineRanges$ | async; let isLast = last">
+  <div #rangeElement style="height:26px; display: inline-block" class="range"
+       [ngClass]="{'chosen-range': timelineRange.equals(timelineRange) }"
+       (click)="onTimelineRangeTitleClick(timelineRange)">
+    {{ timelineRange.getLabel() }}
+    <ng-container *ngIf="!isLast"> ></ng-container>
+  </div>
+</ng-container>
+
+<div #timelineDiv
+     id="timeline-div"
+     (mousemove)="onMouseMove($event)"
+     (mousedown)="onMouseDown($event)"
+     (mouseup)="onMouseUp()"
+     style="cursor: text; position: relative;height:20px;"
+     [style.background]="getBackground()"
+>
+  <ng-container *ngIf="timelineSpecification">
+    <div *ngFor="let tick of timelineSpecification.ticks;"
+         style="position:relative; height:12px;width:0.1px;background:lightseagreen;display: inline-block;"
+         [style.transform]="'translateX(' + tick.position + 'px)'">
+      <span
+        style="font-size: 6px;vertical-align: top; transform: translateX(2px);display: inline-block;cursor: default;user-select: none;">
+      {{ getDisplayedTimeValue(tick.time) }}
+      </span>
+    </div>
+  </ng-container>
+</div>
+
+
+<button mat-button *ngIf="requestedTimelineRange && showRequestedTimelineRange"
+        style="position: absolute;top:90px;"
+        [style.width.px]="requestedTimelineButtonWidth"
+        [style.left.px]="positionForLoopButton"
+        (click)="onRequestedTimelineAccepted($event)"
+        (mouseup)="$event.stopPropagation()"
+>
+  <mat-icon svgIcon="zoom_in"></mat-icon>
+  {{ requestedTimelineRange.getLabel() }}
+</button>

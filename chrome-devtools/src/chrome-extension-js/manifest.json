@@ -1,0 +1,32 @@
+{
+  "name": "RxVision",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject-into-host.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "https://localhost/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "devtools_page": "devtools.html",
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
