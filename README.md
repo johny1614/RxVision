@@ -1,7 +1,7 @@
 # RxVision
 
-RxVision is a Chrome DevTools extension that lets you visualize RxJS streams from your own code.
-Integrate it with your application by marking emission points, and instantly inspect how your streams behave in real time inside DevTools.
+RxJS streams visualizer and debugger for Chrome DevTools and standalone use.
+Integrate it with your web application by marking emission points, and instantly inspect how your streams behave in real time inside DevTools.
 
 ---
 

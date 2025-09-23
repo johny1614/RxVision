@@ -12,5 +12,9 @@
     "build:api": "npm -w api run build",
     "publish:api": "npm publish -w api --access public",
     "start:demo": "npm -w demo-app start"
+  },
+  "dependencies": {
+    "rx-vis-lib-new": "^1.0.54",
+    "rx-vision": "^0.0.1"
   }
 }

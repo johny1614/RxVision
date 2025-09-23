@@ -21,7 +21,7 @@ Thank you for your interest in contributing! 🎉
    ```bash
    git push origin my-feature-branch
    ```
-6. **Open a Pull Request** (PR) from your fork to this repository’s `master` branch.
+6. **Open a Pull Request** (PR) from your fork to this repository’s `main` branch.
 
 ### Option B: If you are already added as a contributor
 1. **Create a branch directly** in this repository:
@@ -30,7 +30,7 @@ Thank you for your interest in contributing! 🎉
    ```
 2. **Make your changes** and commit them.
 3. **Push** your branch to this repository.
-4. Open a Pull Request (PR) from your branch to `master`.
+4. Open a Pull Request (PR) from your branch to `main`.
 
 ---
 
