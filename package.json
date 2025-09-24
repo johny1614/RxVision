@@ -14,9 +14,5 @@
     "start:demo-app": "npm -w demo-app start",
     "start:dev": "npm start:frontend",
     "start:frontend": "npm -w frontend start"
-  },
-  "dependencies": {
-    "rx-vis-lib-new": "^1.0.54",
-    "rx-vision": "^0.0.1"
   }
 }

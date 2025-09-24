@@ -5925,13 +5925,6 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rx-vis-lib-new@^1.0.45:
-  version "1.0.45"
-  resolved "https://registry.npmjs.org/rx-vis-lib-new/-/rx-vis-lib-new-1.0.45.tgz"
-  integrity sha512-KIyYjGfTioPr1ezRjPNS7HUuiAtW3GLycC2qO8zfy1l0kZOZNV1L5Io1lDjUaORP5yxLgbFZ/VOM216jnXcNJQ==
-  dependencies:
-    rxjs "^7.8.1"
-
 rxjs@^7.8.1, rxjs@~7.8.0, rxjs@7.8.1:
   version "7.8.1"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.8.1.tgz"
