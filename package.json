@@ -8,10 +8,12 @@
     "api"
   ],
   "scripts": {
-    "build": "npm -w frontend run build && npm -w chrome-devtools run build",
+    "build:extesion": "npm -w frontend run build && npm -w chrome-devtools run build",
     "build:api": "npm -w api run build",
     "publish:api": "npm publish -w api --access public",
-    "start:demo": "npm -w demo-app start"
+    "start:demo-app": "npm -w demo-app start",
+    "start:dev": "npm start:frontend",
+    "start:frontend": "npm -w frontend start"
   },
   "dependencies": {
     "rx-vis-lib-new": "^1.0.54",

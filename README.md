@@ -1,6 +1,6 @@
 # RxVision
 
-RxJS streams visualizer and debugger for Chrome DevTools and standalone use.
+RxJS streams visualizer and debugger for Chrome DevTools and standalone use.<br>
 Integrate it with your web application by marking emission points, and instantly inspect how your streams behave in real time inside DevTools.
 
 ---
@@ -14,7 +14,7 @@ Integrate it with your web application by marking emission points, and instantly
 ## Basic usage in your project
 1. Install the RxVision extension from the Chrome Web Store – // TODO give link
 2. Install the library with `npm install rx-vis-lib-new` or `yarn add rx-vis-lib-new` depending on your package manager
-3. Mark emission points in your code using the `addRxVisionEmission` function which takes 2 parameters:
+3. Mark observable's emission points in your code using the `addRxVisionEmission` function which takes 2 parameters:
   - `streamName: string` – unique identifier of the stream
   - `emissionValue: any` – value emitted
 
@@ -38,33 +38,38 @@ setTimeout(() => {
 
 ---
 
-## Development
+## Frontend development
+Most of the time you want to develop in this mode.
+This development mode allows you to work on RxVision UI and see changes in real time in the browser.
 1. Clone this repository to your local machine
-2. Make sure you have Python 3.11 or newer installed (you can check this running `python --version`)
-3. Optionally, modify the source code before building the extension
-4. Run:
+2. Make sure you have installed: <br> Python 3.11 or newer (you can check this running `python --version`) <br>
+   Node.js 18 or newer (you can check this running `node --version`) <br>
+   Angular CLI 17+ (you can install it running `npm install -g @angular/cli` and check version with `ng version`)
+3. Run:
    ```bash
-   npm run build-extension
+   npm run start:dev
+   ```
+4. Open http://localhost:4200 in a new browser tab
+5. Any code modifications in `/frontend` directory will be automatically rebuilt and reflected in the browser.
+
+
+## Chrome devtools Development
+This development mode allows you to check changes connected to chrome-devtools extension.
+1. Follow steps 1-2 from [Development](#Development)
+2. Run:
+   ```bash
+   npm run start:demo-app
+   ```
+3. Optionally - modify the source code before building the extension
+4. On another console run:
+   ```bash
+   npm run build:extesion
    ```  
-   This script compiles the extension into `dist/rxvis-extension` directory.
-5. Navigate in chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `dist/rxvis-extension` directory).  
+   This script compiles the extension into `chrome-devtools/dist/rxvis-extension` directory.
+5. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `chrome-devtools/dist/rxvis-extension` directory).<br><br>
    If you've done this step before – just reload is enough.
-6. Open http://localhost:4200 in a new browser tab
-7. RxVision UI is available on the main page and in Chrome DevTools (F12 → RxVision tab)
-
----
-
-## Important files for development
-Everything in `src/chrome-extension-js` is passed by `build-extension.py` script into `dist/rxvis-extension`.
-
-Files of chrome-extension-js are:
-- `manifest.json` – describes extension
-- `background.js` – background script, runs on browser startup (has dedicated console)
-- `content.js` – injected into client application (runs in page context)
-- `devtools.html` – defines the DevTools panel UI (on F12 → RxVision tab)
-- `devtools.js` – script loaded by devtools.html, responsible for loading panel.html
-- `panel.html` – page with stream's timelines and emissions
-
+6. Open http://localhost:4201 in a new browser tab
+7. RxVision UI is available in Chrome DevTools (F12 → RxVision tab)
 ---
 
 ## Contributing
@@ -88,45 +93,26 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 ---
 
 ## TODO / Planned improvements
-Tak na teraz:
-- Sprawdzenie czy obecne zmiany nie wprowadzily jakiegos regresu na devtoolsie
-- Testy z devtoolsem
-- Testy z iframem
-- Wrzucenie liby do tego reposa (appliera na razie nie)
-- Research odnosnie appliera kolejny - moze ai juz dzisiaj to ogarnia, moze copilot to umie?
-
-Bugs:
-- On F12 last tick is stuck when going into custom range and later back to full range
-
-
-UI analysis/improvements:
-- Dott lines of streams + po lewej stronie pewnie tez by sie przydaly moze? 
-- Może nie pozwalać na zmiane rozmiaru panelu z lewej na wiekszy niz wszystkie streamy? - bo pojawia
-się problem z tym jak zrobimy duzo mniejsca z lewej i potem zwężamy body
+- Documentation about Iframe usage
+- IFrame tests - another demo-app this time with iframe
+- Research about automatic applying of addRxVisionEmission (maybe AI is better now, before aider was the closes but no cigar).
+- Stop button - to let the emissions be stopped from going to the extension
+- Test on a 1000+ emissions and many streams (performance)
 
 Bugs:
 - Sometimes selecting range is buggy - there is 0 ms (maybe after we go back to Full range?)
 
-- Design changes
-  - Colorful lozenge with name of stream on left
-  - Gentle horizontal line for every stream
-  - Vertical stacking of emissions
-  - +x icon when vertical stacking is sussy
-- Play/pause/stop panel (To analyze how it should looks like and works)
-- rxVisLibNew project - it should be in this repo as a library pipeline that upgrades it on npm
-- rxVisUser - it should be as demo/angular + maybe give react one for fun huh?
-- Selecting markers - and displaying them in a sidebar (to analyze UI/UX)
+UI analysis/improvements:
+- Dot lines of streams - maybe on the left split pane side too? Maybe different design?
+- Maybe don't let left pane to be bigger than the longest stream name?
+- Selecting markers - and displaying them in a right sidebar?
 - Exporting data as JSON
 - Importing data from JSON
 - Exporting to Image/PDF
-- Stream based on different streams (with particular rxjs pipe)
-- X-markers in a stairway fashion
-- Dark mode (toggler && auto based on system theme or maybe time of day?)
 - Approach of not rerendering all markers components but only changing their positions when possible
-- Test on a lot of emissions (performance)
+- Stream based on different streams (with particular rxjs pipe)
+- Dark mode (toggler && auto based on system theme or maybe time of day?)
 - Ability to hide stream
-- Ability to stop getting more emissions
-- Movie with demo of usage
 
 ## Project Structure
 
