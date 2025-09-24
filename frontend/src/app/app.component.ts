@@ -2,7 +2,7 @@ import {Component, DestroyRef, Inject, OnInit, ViewEncapsulation} from '@angular
 import {Router} from "@angular/router";
 import {IS_DEVELOPER_MODE} from "../isDeveloperMode";
 import {PanelMessageService} from "./panel/panel-message.service";
-import {Observable, Subject, timer} from "rxjs";
+import {combineLatest, Observable, Subject, timer} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {Emission} from "./emission/emission.model";
 import {createAbsoluteTimedObservable} from "./util/createAbsoluteTimedObservable";
@@ -18,15 +18,14 @@ declare const chrome: any;
 export class AppComponent implements OnInit {
   valuesA = [2222, 3333];
   delaysA = [0, 1200];
-  delaysB = [0, 70, 130, 180, 550]
+  delaysB = [400, 1600]
   valuesC = [2222, 3333];
   delaysC = [500, 510, 512, 515, 520];
-
 
   A$ = createAbsoluteTimedObservable(this.valuesA, this.delaysA);
   B$ = createAbsoluteTimedObservable(this.delaysB, this.delaysB);
   C$ = createAbsoluteTimedObservable(this.valuesC, this.delaysC);
-
+  combineAB$ = combineLatest([this.A$, this.B$]);
 
   isChromeExtension = false;
 
@@ -37,25 +36,34 @@ export class AppComponent implements OnInit {
   ) {
     if (this.isDeveloperMode) {
       const startTime = Date.now();
-      this.panelMessageService.addDeveloperEmission(new Emission(0, '0', 0), 'BBBB····');
       this.A$.subscribe(value => {
         const time = Date.now() - startTime;
         const emission = new Emission(value, `time: ${time} value: ${value} `, time);
-        this.panelMessageService.addDeveloperEmission(emission, '·AAAA·');
+        this.panelMessageService.addDeveloperEmission(emission, 'Salary$');
       });
       this.B$.subscribe(value => {
         const time = Date.now() - startTime;
         const emission = new Emission(value, `time: ${time} value: ${value} \n`, time);
         console.log('emission B', emission.time);
-        this.panelMessageService.addDeveloperEmission(emission, 'BBBB····');
+        this.panelMessageService.addDeveloperEmission(emission, 'Rent$');
       });
-      this.C$.subscribe(value => {
+
+      this.combineAB$.subscribe(([a, b]) => {
         const time = Date.now() - startTime;
-        const emission = new Emission(value, `time: ${time} value: ${value}`, time);
-        this.panelMessageService.addDeveloperEmission(emission, 'C·····');
+        const emission = new Emission(
+          { a, b },
+          `time: ${time} Weather: ${a}, Rent: ${b}`,
+          time
+        );
+        this.panelMessageService.addDeveloperEmission(emission, 'combine$');
       });
 
 
+      // this.C$.subscribe(value => {
+      //   const time = Date.now() - startTime;
+      //   const emission = new Emission(value, `time: ${time} value: ${value}`, time);
+      //   this.panelMessageService.addDeveloperEmission(emission, 'Bus$');
+      // });
       // const streams = ['stream1', 'stream2', 'stream3', 'stream4', 'stream5', 'stream6', 'stream7', 'stream8', 'stream9', 'stream10',
       //   'stream11', 'stream12', 'stream13', 'stream14', 'stream15', 'stream16', 'stream17', 'stream18', 'stream19', 'stream20',
       //   'stream21', 'stream22', 'stream23', 'stream24', 'stream25', 'stream26', 'stream27', 'stream28', 'stream29', 'stream30'

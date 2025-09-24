@@ -6,8 +6,8 @@ Integrate it with your web application by marking emission points, and instantly
 ---
 
 ## Demo usage
-// TODO add demo video here  
-// TODO add screenshot of timeline view
+![graph.png](graph.png)
+// TODO add demo video here
 
 ---
 
