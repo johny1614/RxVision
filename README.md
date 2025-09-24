@@ -13,7 +13,7 @@ Integrate it with your web application by marking emission points, and instantly
 
 ## Basic usage in your project
 1. Install the RxVision extension from the Chrome Web Store – // TODO give link
-2. Install the library with `npm install rx-vis-lib-new` or `yarn add rx-vis-lib-new` depending on your package manager
+2. Install the library with `npm install rx-vision` or `yarn add rx-vision` depending on your package manager
 3. Mark observable's emission points in your code using the `addRxVisionEmission` function which takes 2 parameters:
   - `streamName: string` – unique identifier of the stream
   - `emissionValue: any` – value emitted
@@ -53,9 +53,9 @@ This development mode allows you to work on RxVision UI and see changes in real 
 5. Any code modifications in `/frontend` directory will be automatically rebuilt and reflected in the browser.
 
 
-## Chrome devtools Development
-This development mode allows you to check changes connected to chrome-devtools extension.
-1. Follow steps 1-2 from [Development](#Development)
+## Chrome devtools development
+This development mode allows you to check changes connected to chrome-devtools extension technicalities.
+1. Follow steps 1-2 from [Frontend development](#frontend-development)
 2. Run:
    ```bash
    npm run start:demo-app
@@ -121,8 +121,8 @@ UI analysis/improvements:
   Uses npm package from /api and expects the Chrome extension to be loaded.
 
 - **chrome-devtools/**  
-  *Chrome DevTools host & glue.*
-  *It's build (npm run build) output is Chrome extension to be loaded in chrome browser *
+  *Chrome DevTools host & glue.*<br>
+  It's build (npm run build) output is Chrome extension to be loaded in chrome browser *
   **No domain/UI logic resides here.**
 
 - **frontend/**  
@@ -130,12 +130,7 @@ UI analysis/improvements:
   *Can be run with ng serve for dev purposes.*
 
 - **api/**  
-  *Npm package.*
-  Stable API for sending emissions from user code to RxVision (as used in `demo-app`).  
-  Contains no Angular or Chrome-specific code.
-
-
-
-
-
+  *Npm package* - https://www.npmjs.com/package/rx-vision <br>
+  Stable API for sending emissions from user code to RxVision extension (as used in `demo-app`).  
+  Contains pure js - no Angular or Chrome-specific code.
 
