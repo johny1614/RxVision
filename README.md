@@ -12,16 +12,32 @@ Integrate it with your web application by marking emission points, and instantly
 ---
 
 ## Basic usage in your project
-1. ~~Install the RxVision extension from the Chrome Web Store~~ - coming soon! For now run:
-```bash
+
+1. ~~Install the RxVision extension from the Chrome Web Store~~ – coming soon!  
+   For now run:
+
+   ```bash
    npm run build:extension
    ```
-This script compiles the extension into chrome-devtools/dist/rxvis-extension directory.
-2. Navigate in Chrome browser to chrome://extensions – enable developer mode and load unpacked extension (pass chrome-devtools/dist/rxvis-extension directory).
-2. Install the library with `npm install rx-vision` or `yarn add rx-vision` depending on your package manager
-3. Mark observable's emission points in your code using the `addRxVisionEmission` function which takes 2 parameters:
-  - `streamName: string` – unique identifier of the stream
-  - `emissionValue: any` – value emitted
+
+   This script compiles the extension into `chrome-devtools/dist/rxvis-extension` directory.
+
+2. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `chrome-devtools/dist/rxvis-extension` directory).
+
+3. Install the library with:
+
+   ```bash
+   npm install rx-vision
+   ```
+   or
+   ```bash
+   yarn add rx-vision
+   ```
+   depending on your package manager.
+
+4. Mark observable's emission points in your code using the `addRxVisionEmission` function which takes 2 parameters:
+    - `streamName: string` – unique identifier of the stream
+    - `emissionValue: any` – value emitted
 
 Example:
 
