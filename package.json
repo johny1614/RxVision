@@ -8,7 +8,7 @@
     "api"
   ],
   "scripts": {
-    "build:extesion": "npm -w frontend run build && npm -w chrome-devtools run build",
+    "build:extension": "npm -w frontend run build && npm -w chrome-devtools run build",
     "build:api": "npm -w api run build",
     "publish:api": "npm publish -w api --access public",
     "start:demo-app": "npm -w demo-app start",
