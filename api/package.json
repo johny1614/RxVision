@@ -1,6 +1,6 @@
 {
   "name": "rx-vision",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "typings": "./dist/index.d.ts",
@@ -12,5 +12,11 @@
   },
   "dependencies": {
     "rxjs": "^7.8.1"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ]
 }
