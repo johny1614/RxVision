@@ -3,11 +3,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
-    "activeTab",
-    "declarativeContent",
-    "scripting",
-    "storage",
-    "tabs"
+    "storage"
   ],
   "web_accessible_resources": [
     {
@@ -17,7 +13,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["http://localhost/*", "https://localhost/*"],
+      "matches": ["<all_urls>"],
       "js": ["content_script.js"]
     }
   ],
@@ -28,5 +24,9 @@
   "devtools_page": "devtools.html",
   "action": {
     "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "logo_48.png",
+    "128": "logo_128.png"
   }
 }

@@ -122,6 +122,7 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 
 Bugs:
 - Sometimes selecting range is buggy - there is 0 ms (maybe after we go back to Full range?)
+- After long idle of web page and refreshing it - sometimes there are missing markers, maybe after changes of permissions in manifest
 
 UI analysis/improvements:
 - Dot lines of streams - maybe on the left split pane side too? Maybe different design?

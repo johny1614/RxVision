@@ -23,11 +23,11 @@ export class AppComponent {
   }
 
   private observeNotifications() {
-    setTimeout(() => addRxVisionEmission('notifications', this.notifications[0]), 0);
-    setTimeout(() => addRxVisionEmission('notifications', this.notifications[1]), 200);
-    setTimeout(() => addRxVisionEmission('notifications', this.notifications[2]), 800);
-    setTimeout(() => addRxVisionEmission('notifications', this.notifications[3]), 1200);
-    setTimeout(() => addRxVisionEmission('notifications', this.notifications[4]), 2000);
+    setTimeout(() => addRxVisionEmission('notifications', this.notifications[0], this.notifications[0].message), 0);
+    setTimeout(() => addRxVisionEmission('notifications', this.notifications[1], this.notifications[1].message), 200);
+    setTimeout(() => addRxVisionEmission('notifications', this.notifications[2], this.notifications[2].message), 800);
+    setTimeout(() => addRxVisionEmission('notifications', this.notifications[3], this.notifications[3].message), 1200);
+    setTimeout(() => addRxVisionEmission('notifications', this.notifications[4], this.notifications[4].message), 2000);
   }
 
 
