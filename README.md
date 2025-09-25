@@ -14,7 +14,7 @@ Integrate it with your web application by marking emission points, and instantly
 ## Basic usage in your project
 
 1. ~~Install the RxVision extension from the Chrome Web Store~~ – coming soon!  
-   For now run:
+   For now run in the root of this repository:
 
    ```bash
    npm run build:extension
@@ -24,7 +24,7 @@ Integrate it with your web application by marking emission points, and instantly
 
 2. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `chrome-devtools/dist/rxvis-extension` directory).
 
-3. Install the library with:
+3. Install the library in your project with:
 
    ```bash
    npm install rx-vision
@@ -57,6 +57,15 @@ setTimeout(() => {
 }, 3000);
 ```
 
+---
+
+
+## Contributing
+Contributions are welcome!
+1. Fork this repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a pull request
 ---
 
 ## Frontend development
@@ -93,14 +102,6 @@ This development mode allows you to check changes connected to chrome-devtools e
 7. RxVision UI is available in Chrome DevTools (F12 → RxVision tab)
 ---
 
-## Contributing
-Contributions are welcome!
-1. Fork this repository
-2. Create a feature branch
-3. Commit your changes
-4. Open a pull request
-
----
 
 ## Issues & Support
 - Found a bug? Please open an [issue](../../issues).
