@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   A$ = createAbsoluteTimedObservable(this.valuesA, this.delaysA);
   B$ = createAbsoluteTimedObservable(this.delaysB, this.delaysB);
   C$ = createAbsoluteTimedObservable(this.valuesC, this.delaysC);
-  combineAB$ = combineLatest([this.A$, this.B$]);
+  combinedAB$ = combineLatest([this.A$, this.B$]);
 
   isChromeExtension = false;
 
@@ -48,14 +48,14 @@ export class AppComponent implements OnInit {
         this.panelMessageService.addDeveloperEmission(emission, 'Rent$');
       });
 
-      this.combineAB$.subscribe(([a, b]) => {
+      this.combinedAB$.subscribe(([a, b]) => {
         const time = Date.now() - startTime;
         const emission = new Emission(
           { a, b },
           `time: ${time} Weather: ${a}, Rent: ${b}`,
           time
         );
-        this.panelMessageService.addDeveloperEmission(emission, 'combine$');
+        this.panelMessageService.addDeveloperEmission(emission, 'combined$');
       });
 
 

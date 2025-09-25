@@ -12,7 +12,7 @@
     "build:api": "npm -w api run build",
     "publish:api": "npm publish -w api --access public",
     "start:demo-app": "npm -w demo-app start",
-    "start:dev": "npm start:frontend",
+    "start:dev": "npm run start:frontend",
     "start:frontend": "npm -w frontend start"
   }
 }
