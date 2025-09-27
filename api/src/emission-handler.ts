@@ -1,5 +1,5 @@
-import {Emission} from './emission';
-import {EmissionMessage} from './emission-message';
+import {Emission} from './emission.js';
+import {EmissionMessage} from './emission-message.js';
 
 export class EmissionHandler {
 

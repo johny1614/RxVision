@@ -1,6 +1,6 @@
 import {filter, ReplaySubject, take} from "rxjs";
-import {EmissionHandler} from "./emission-handler";
-import {MessageHandler} from "./message-handler";
+import {EmissionHandler} from "./emission-handler.js";
+import {MessageHandler} from "./message-handler.js";
 
 export class RxVisionManager {
     private initialized = false;
