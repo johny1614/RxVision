@@ -1,0 +1,17 @@
+{
+  "name": "host",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 4200 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 4200 --strictPort"
+  },
+  "dependencies": {
+    "rx-vision": "https://registry.npmjs.org/rx-vision/-/rx-vision-0.0.7.tgz"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2",
+    "vite": "^5.4.0"
+  }
+}
