@@ -15,7 +15,7 @@ function listenForIframeToHostProxyMessages() {
       const {displayValue, streamName, value} = event.data.payload;
       const time = getEmissionTime();
       const emission = {displayValue, streamName, value, time};
-      const message = {emission, type: 'emission-from-iframe-to-host-proxy'};
+      const message = {emission, type: 'emission-from-iframe-to-host-proxy', streamId: streamName};
       window.postMessage(message, '*');
     }
   });

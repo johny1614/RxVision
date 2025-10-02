@@ -4,7 +4,5 @@ const streamNameElement = document.getElementById("client-stream-name") as HTMLI
 const emissionNameElement = document.getElementById("client-emission-name") as HTMLInputElement;
 
 document.getElementById("client-emit-button")!.addEventListener("click", () => {
-    // addRxVisionEmissionFromIframe(streamNameElement.value, emissionNameElement.value,emissionNameElement.value);
-    addRxVisionEmissionFromIframe("1","2");
-    // stream name jest zignorowany hmmm
+    addRxVisionEmissionFromIframe(streamNameElement.value, emissionNameElement.value,emissionNameElement.value);
 });

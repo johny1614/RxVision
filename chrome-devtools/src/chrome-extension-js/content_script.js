@@ -1,14 +1,4 @@
-listenForIframeProxyMessages();
 prepareScriptForIframeProxy();
-
-function listenForIframeProxyMessages() {
-  window.addEventListener('message', (event) => {
-    if (event.data.type === 'emission-from-iframe-to-host-proxy') {
-      console.log('Emisja z iframe w content scripcie', event.data);
-      // TODO wyslac jak zwykla jesli bd w stanie podpiąć libę do tego co bd trudne bardzo
-    }
-  });
-}
 
 function prepareScriptForIframeProxy() {
   const script = document.createElement('script');
