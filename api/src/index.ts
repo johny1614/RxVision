@@ -2,6 +2,8 @@ import {filter, ReplaySubject, take} from "rxjs";
 import {EmissionHandler} from "./emission-handler.js";
 import {MessageHandler} from "./message-handler.js";
 
+console.log('qqqqqqqqqq');
+
 export class RxVisionManager {
     private initialized = false;
     private initTime: number | undefined;
@@ -44,9 +46,11 @@ export class RxVisionManager {
 const rxVisionManager = new RxVisionManager();
 
 export function addRxVisionEmission(streamName: string, value: any, displayValue = value) {
+    console.log('add zwykle')
     rxVisionManager.addRxVisionEmission(streamName, value, displayValue);
 }
 
 export function addRxVisionEmissionFromIframe(streamName: string, value: any, displayValue = value) {
+    console.log('add from iframe')
     rxVisionManager.addRxVisionEmissionFromIframe(streamName, value, displayValue);
 }

@@ -1,5 +1,5 @@
 {
-  "name": "host",
+  "name": "iframe-host-app",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,7 +8,7 @@
     "preview": "vite preview --port 4200 --strictPort"
   },
   "dependencies": {
-    "rx-vision": "https://registry.npmjs.org/rx-vision/-/rx-vision-0.0.7.tgz"
+    "rx-vision": "0.0.8"
   },
   "devDependencies": {
     "typescript": "^5.6.2",
