@@ -5,26 +5,25 @@ Integrate it with your web application by marking emission points, and instantly
 
 ---
 
-## Demo usage
-![graph.png](graph.png)
-// TODO add demo video here
+## Gallery
+![Gallery 1](assets/graph.png)
 
----
+
+## Video
+Coming soon (demo video will be added here)
+
+
+## StackBlitz demo
+
+1. Make sure you have RxVision extension installed from [Chrome Web Store](https://chrome.google.com/webstore/detail/rxvision-rxjs-streams-v/ldgfbffkpkdmdmflfjdlnaclhkmjblmd)
+2. Open [this StackBlitz demo project](https://stackblitz.com/edit/vitejs-vite-txfkgfrf?file=src%2Fmain.ts)
+3. Open Chrome DevTools (F12) and navigate to RxVision tab
+4. There you go! You can see emissions from the demo project in real time.
 
 ## Basic usage in your project
 
-1. ~~Install the RxVision extension from the Chrome Web Store~~ – coming soon!  
-   For now run in the root of this repository:
-
-   ```bash
-   npm run build:extension
-   ```
-
-   This script compiles the extension into `chrome-devtools/dist/rxvis-extension` directory.
-
-2. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `chrome-devtools/dist/rxvis-extension` directory).
-
-3. Install the library in your project with:
+1. Make sure you have RxVision extension installed from [Chrome Web Store](https://chrome.google.com/webstore/detail/rxvision-rxjs-streams-v/ldgfbffkpkdmdmflfjdlnaclhkmjblmd)
+2. Install the library in your project with:
 
    ```bash
    npm install rx-vision
@@ -35,7 +34,7 @@ Integrate it with your web application by marking emission points, and instantly
    ```
    depending on your package manager.
 
-4. Mark observable's emission points in your code using the `addRxVisionEmission` function which takes 2 parameters:
+3. Mark observable's emission points in your code using the `addRxVisionEmission` function which takes 2 parameters:
     - `streamName: string` – unique identifier of the stream
     - `emissionValue: any` – value emitted
 
@@ -72,9 +71,10 @@ Contributions are welcome!
 Most of the time you want to develop in this mode.
 This development mode allows you to work on RxVision UI and see changes in real time in the browser.
 1. Clone this repository to your local machine
-2. Make sure you have installed: <br> Python 3.11 or newer (you can check this running `python --version`) <br>
-   Node.js 18 or newer (you can check this running `node --version`) <br>
-   Angular CLI 17+ (you can install it running `npm install -g @angular/cli` and check version with `ng version`)
+2. Make sure you have installed:
+    - Python 3.11+ (`python --version`)
+    - Node.js 18+ (`node --version`)
+    - Angular CLI 17+ (`ng version`)
 3. Run:
    ```bash
    npm run start:dev
@@ -93,7 +93,7 @@ This development mode allows you to check changes connected to chrome-devtools e
 3. Optionally - modify the source code before building the extension
 4. On another console run:
    ```bash
-   npm run build:extesion
+   npm run build:extension
    ```  
    This script compiles the extension into `chrome-devtools/dist/rxvis-extension` directory.
 5. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `chrome-devtools/dist/rxvis-extension` directory).<br><br>
@@ -114,29 +114,6 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 
 ---
 
-## TODO / Planned improvements
-- Documentation about Iframe usage
-- IFrame tests - another demo-app this time with iframe
-- Research about automatic applying of addRxVisionEmission (maybe AI is better now, before aider was the closes but no cigar).
-- Stop button - to let the emissions be stopped from going to the extension
-- Test on a 1000+ emissions and many streams (performance)
-
-Bugs:
-- Sometimes selecting range is buggy - there is 0 ms (maybe after we go back to Full range?)
-- After long idle of web page and refreshing it - sometimes there are missing markers, maybe after changes of permissions in manifest
-
-UI analysis/improvements:
-- Dot lines of streams - maybe on the left split pane side too? Maybe different design?
-- Maybe don't let left pane to be bigger than the longest stream name?
-- Selecting markers - and displaying them in a right sidebar?
-- Exporting data as JSON
-- Importing data from JSON
-- Exporting to Image/PDF
-- Approach of not rerendering all markers components but only changing their positions when possible
-- Stream based on different streams (with particular rxjs pipe)
-- Dark mode (toggler && auto based on system theme or maybe time of day?)
-- Ability to hide stream
-
 ## Project Structure
 
 - **demo-app/**  
@@ -145,7 +122,7 @@ UI analysis/improvements:
 
 - **chrome-devtools/**  
   *Chrome DevTools host & glue.*<br>
-  It's build (npm run build) output is Chrome extension to be loaded in chrome browser *
+  Its build (npm run build) output is Chrome extension to be loaded in chrome browser *
   **No domain/UI logic resides here.**
 
 - **frontend/**  
