@@ -1,6 +1,6 @@
 {
-  "name": "RxVision",
-  "version": "1.0",
+  "name": "RxJS Visualizer – RxVision",
+  "version": "1.1",
   "manifest_version": 3,
   "permissions": [
     "storage"
