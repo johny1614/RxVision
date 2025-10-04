@@ -78,7 +78,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.isChromeExtension = typeof chrome !== 'undefined' && typeof chrome.runtime !== 'undefined';
-    console.log('jest oninit!', this.isChromeExtension);
   }
 }
 

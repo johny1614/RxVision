@@ -11,6 +11,10 @@ export class RxVisionManager {
     private messageHandler: MessageHandler = new MessageHandler();
 
     public addRxVisionEmissionFromIframe(streamName: string, value: any, displayValue = value) {
+        if (!this.initialized) {
+            this.init();
+        }
+        // TODO delete and use inIframe
         window.parent.postMessage({
             source: 'rxvision-iframe-to-host-proxy',
             payload: {streamName, value, displayValue},
@@ -18,6 +22,12 @@ export class RxVisionManager {
     }
 
     public addRxVisionEmission(streamName: string, value: any, displayValue = value) {
+        const inIframe = (() => {
+            try { return window.parent !== window; }
+            catch { return true; } // cross-origin iframes – traktuj jak iframe
+        })();
+
+        console.log('is in iframe?', inIframe);
         if (!this.initialized) {
             this.init();
         }
@@ -30,11 +40,26 @@ export class RxVisionManager {
         });
     }
 
+    public clearAllRxVisionEmissionsFromIframe(): void { // ale czy na pewno chce isc w te droge?
+        window.parent.postMessage({
+            type: 'CLEAR_EMISSIONS',
+            payload: {}
+        });
+    }
+
+    public clearAllRxVisionEmissions(): void {
+        window.parent.postMessage({
+            type: 'CLEAR_EMISSIONS',
+            payload: {}
+        });
+    }
+
     private getEmissionTime() {
         return Date.now() - this.initTime;
     }
 
     private init() {
+        console.log('inituje');
         this.messageHandler.init(this.extensionReadyForMessages$);
         this.initTime = Date.now();
         this.initialized = true;
@@ -49,4 +74,8 @@ export function addRxVisionEmission(streamName: string, value: any, displayValue
 
 export function addRxVisionEmissionFromIframe(streamName: string, value: any, displayValue = value) {
     rxVisionManager.addRxVisionEmissionFromIframe(streamName, value, displayValue);
+}
+
+export function clearAllRxVisionEmissions() {
+    rxVisionManager.clearAllRxVisionEmissions();
 }

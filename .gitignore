@@ -37,3 +37,10 @@ pnpm-debug.log*
 # misc
 *.swp
 *.swo
+/chrome-devtools/.idea/.gitignore
+/api/.idea/api.iml
+/chrome-devtools/.idea/chrome-devtools.iml
+/api/.idea/modules.xml
+/chrome-devtools/.idea/modules.xml
+/api/.idea/vcs.xml
+/chrome-devtools/.idea/vcs.xml

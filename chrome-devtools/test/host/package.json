@@ -7,11 +7,11 @@
     "build": "vite build",
     "preview": "vite preview --port 4200 --strictPort"
   },
-  "dependencies": {
-    "rx-vision": "^0.0.8"
-  },
   "devDependencies": {
     "typescript": "^5.6.2",
     "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "rx-vision": "^0.0.16"
   }
 }

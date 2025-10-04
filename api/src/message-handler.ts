@@ -10,6 +10,9 @@ export class MessageHandler {
                 window.postMessage({type: "ACK_FROM_CLIENT_LIB"}, "*");
             }
             if (event.data.type === "EXTENSION_READY_FOR_MESSAGES") {
+                console.log('jest i extension ready for messages');
+                // i to nie jest wysylane na stackblitzu - to troche problem, ale moze nie jest potrzebne
+                // bedziemy i tak mieli wiedze czy jestesmy w iframe czy nie
                 extensionReadyForMessages$.next(true);
             }
 

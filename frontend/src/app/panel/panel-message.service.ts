@@ -45,7 +45,6 @@ export class PanelMessageService {
   }
 
   private handleMessage(message) {
-    console.log('panel message', message);
     if (message.type === 'page_refreshed') {
       this.emissions = {};
       this.emissionsSubject$.next(this.emissions);
@@ -64,6 +63,9 @@ export class PanelMessageService {
     }
     if (message.type === MessageType.TAB_ID) {
       this.sessionId = (message as SessionIdMessage).value;
+      this.emissions = {};
+    }
+    if(message.type === MessageType.CLEAR_EMISSIONS) {
       this.emissions = {};
     }
     this.emissionsSubject$.next(this.emissions);

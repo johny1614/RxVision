@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {interval, map, take} from 'rxjs';
-import {addRxVisionEmission} from 'rx-vision';
+import {addRxVisionEmission, clearAllRxVisionEmissions} from 'rx-vision';
 
 @Component({
   selector: 'app-root',
@@ -45,5 +45,9 @@ export class AppComponent {
         return weatherSamples[i];
       })
     );
+  }
+
+  clearAll() {
+    clearAllRxVisionEmissions();
   }
 }
