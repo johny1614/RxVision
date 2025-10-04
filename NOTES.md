@@ -1,8 +1,6 @@
 
 ## TODO / Planned improvements
 - Remove this list - it could be in issues
-- Documentation about Iframe usage
-- IFrame tests - another demo-app this time with iframe
 - Research about automatic applying of addRxVisionEmission (maybe AI is better now, before aider was the closes but no cigar).
 - Stop button - to let the emissions be stopped from going to the extension
 - Test on a 1000+ emissions and many streams (performance)
@@ -10,6 +8,7 @@
 Bugs:
 - Sometimes selecting range is buggy - there is 0 ms (maybe after we go back to Full range?)
 - After long idle of web page and refreshing it - sometimes there are missing markers, maybe after changes of permissions in manifest
+- Same thing on stackblitz ^^
 
 UI analysis/improvements:
 - Dot lines of streams - maybe on the left split pane side too? Maybe different design?

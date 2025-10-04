@@ -4,54 +4,47 @@ import {MessageHandler} from "./message-handler.js";
 
 export class RxVisionManager {
     private initialized = false;
-    private initTime: number | undefined;
+    private initTime: number | undefined | null;
     public extensionReadyForMessages$: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
 
     private emissionHandler: EmissionHandler = new EmissionHandler();
     private messageHandler: MessageHandler = new MessageHandler();
 
-    public addRxVisionEmissionFromIframe(streamName: string, value: any, displayValue = value) {
-        if (!this.initialized) {
-            this.init();
-        }
-        // TODO delete and use inIframe
-        window.parent.postMessage({
-            source: 'rxvision-iframe-to-host-proxy',
-            payload: {streamName, value, displayValue},
-        }, '*');
-    }
-
     public addRxVisionEmission(streamName: string, value: any, displayValue = value) {
-        const inIframe = (() => {
-            try { return window.parent !== window; }
-            catch { return true; } // cross-origin iframes – traktuj jak iframe
-        })();
-
-        console.log('is in iframe?', inIframe);
         if (!this.initialized) {
             this.init();
         }
-        const emissionTime = this.getEmissionTime();
-        this.extensionReadyForMessages$.pipe(
-            filter(ready => ready),
-            take(1)
-        ).subscribe(() => {
-            this.emissionHandler.addRxVisionEmissionWhenReady(streamName, value, emissionTime, displayValue);
-        });
-    }
-
-    public clearAllRxVisionEmissionsFromIframe(): void { // ale czy na pewno chce isc w te droge?
-        window.parent.postMessage({
-            type: 'CLEAR_EMISSIONS',
-            payload: {}
-        });
+        if (!this.initTime) {
+            this.initTime = Date.now();
+        }
+        if (this.isInIframe()) {
+            window.parent.postMessage({
+                source: 'rxvision-iframe-to-host-proxy',
+                payload: {streamName, value, displayValue},
+            }, '*');
+        } else {
+            const emissionTime = this.getEmissionTime();
+            this.extensionReadyForMessages$.pipe(
+                filter(ready => ready),
+                take(1)
+            ).subscribe(() => {
+                this.emissionHandler.addRxVisionEmissionWhenReady(streamName, value, emissionTime, displayValue);
+            });
+        }
     }
 
     public clearAllRxVisionEmissions(): void {
-        window.parent.postMessage({
-            type: 'CLEAR_EMISSIONS',
-            payload: {}
-        });
+        this.initTime = null;
+        if (this.isInIframe()) {
+            window.parent.postMessage({
+                source: 'rxvision-iframe-to-host-proxy-clear-emissions'
+            }, '*');
+        } else {
+            window.postMessage({
+                type: 'CLEAR_EMISSIONS',
+                payload: {}
+            });
+        }
     }
 
     private getEmissionTime() {
@@ -59,10 +52,17 @@ export class RxVisionManager {
     }
 
     private init() {
-        console.log('inituje');
         this.messageHandler.init(this.extensionReadyForMessages$);
         this.initTime = Date.now();
         this.initialized = true;
+    }
+
+    private isInIframe() {
+        try {
+            return window.parent !== window;
+        } catch {
+            return true;
+        }
     }
 }
 
@@ -72,10 +72,9 @@ export function addRxVisionEmission(streamName: string, value: any, displayValue
     rxVisionManager.addRxVisionEmission(streamName, value, displayValue);
 }
 
-export function addRxVisionEmissionFromIframe(streamName: string, value: any, displayValue = value) {
-    rxVisionManager.addRxVisionEmissionFromIframe(streamName, value, displayValue);
-}
-
 export function clearAllRxVisionEmissions() {
+    // TODO moze jakos inaczej nazwij bo to tez czas na 0 bd ustawiac hmmm
     rxVisionManager.clearAllRxVisionEmissions();
 }
+
+export { VERSION } from './version';

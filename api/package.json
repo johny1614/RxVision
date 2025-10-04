@@ -1,12 +1,12 @@
 {
   "name": "rx-vision",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "module": "./dist/index.js",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "node scripts/inject-version.js && tsc"
   },
   "devDependencies": {
     "typescript": "^4.0.0"

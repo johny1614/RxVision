@@ -12,6 +12,6 @@
     "vite": "^5.4.0"
   },
   "dependencies": {
-    "rx-vision": "^0.0.16"
+    "rx-vision": "^0.0.18"
   }
 }
