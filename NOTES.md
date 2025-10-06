@@ -1,9 +1,10 @@
 
 ## TODO / Planned improvements
-- Remove this list - it could be in issues
 - Research about automatic applying of addRxVisionEmission (maybe AI is better now, before aider was the closes but no cigar).
 - Stop button - to let the emissions be stopped from going to the extension
 - Test on a 1000+ emissions and many streams (performance)
+- Real life Use cases scenario presentation
+- 
 
 Bugs:
 - Sometimes selecting range is buggy - there is 0 ms (maybe after we go back to Full range?)
