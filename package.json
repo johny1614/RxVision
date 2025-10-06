@@ -10,9 +10,7 @@
     "api"
   ],
   "scripts": {
-    "build:extension": "npm -w frontend install && npm -w frontend run build && npm -w chrome-devtools run build",
-    "i:api": "npm run install:api",
-    "install:api": "npm i -w api",
+    "build:extension": "npm -w frontend run build && npm -w chrome-devtools run build",
     "start:demo-app": "npm -w demo-app start",
     "start:dev": "npm run start:frontend",
     "start:frontend": "npm -w frontend start",
