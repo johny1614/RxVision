@@ -1,7 +1,7 @@
 import os
 import shutil
 
-frontend_build_path = './../frontend/dist/rxvis-extension/browser'
+frontend_build_path = './../../frontend/dist/rxvis-extension/browser'
 frontend_dest_path = './dist/rxvis-extension/browser'
 extension_files_to_copy_path = './src/chrome-extension-js'
 extension_dest_path = './dist/rxvis-extension'
