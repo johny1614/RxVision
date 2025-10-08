@@ -5,10 +5,11 @@ import {GroupingMarker} from "./grouping-marker/GroupingMarker";
 import {markerHeightPx, markerWidthPx} from "../uiConsts";
 
 @Component({
-  selector: 'app-marker',
-  templateUrl: './marker-component.html',
-  styleUrls: ['./marker-component.css'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-marker',
+    templateUrl: './marker-component.html',
+    styleUrls: ['./marker-component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class MarkerComponent {
 

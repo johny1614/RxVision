@@ -14,10 +14,11 @@ import {Stream} from "../../stream/Stream";
 import {markerWidthPx, streamNameHeightPx, streamNamesMarginBetweenPx} from "../../../ui/uiConsts";
 
 @Component({
-  selector: 'app-new-panel',
-  templateUrl: './new-panel.component.html',
-  styleUrls: ['./new-panel.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-new-panel',
+    templateUrl: './new-panel.component.html',
+    styleUrls: ['./new-panel.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NewPanelComponent implements OnInit, AfterViewInit {
 

@@ -21,10 +21,11 @@ import {TimelineSpecification} from "./TimelineSpecification";
 import {TimelineSpecificationStorage} from "./TimelineSpecificationStorage";
 
 @Component({
-  selector: 'app-timeline',
-  templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-timeline',
+    templateUrl: './timeline.component.html',
+    styleUrls: ['./timeline.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class TimelineComponent implements OnInit, AfterViewInit {
 

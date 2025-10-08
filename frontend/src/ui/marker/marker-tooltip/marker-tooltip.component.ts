@@ -15,11 +15,12 @@ import {ElementSize} from "../../../util/ElementSize";
 import {MarkerTooltipPosition} from "./position/MarkerTooltipPosition";
 
 @Component({
-  selector: 'app-marker-tooltip',
-  templateUrl: './marker-tooltip.component.html',
-  styleUrls: ['./marker-tooltip.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-marker-tooltip',
+    templateUrl: './marker-tooltip.component.html',
+    styleUrls: ['./marker-tooltip.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class MarkerTooltipComponent implements AfterViewInit {
   @Input() marker!: Marker;

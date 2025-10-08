@@ -7,10 +7,11 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 declare const chrome: any;
 
 @Component({
-  selector: 'app-panel',
-  templateUrl: './panel.component.html',
-  styleUrls: ['./panel.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-panel',
+    templateUrl: './panel.component.html',
+    styleUrls: ['./panel.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class PanelComponent implements OnInit {
 

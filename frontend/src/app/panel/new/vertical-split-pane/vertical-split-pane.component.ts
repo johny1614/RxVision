@@ -3,10 +3,11 @@ import {VerticalSplitPaneLeftSideWidthStorage} from "./VerticalSplitPaneLeftSide
 import {Subject} from "rxjs";
 
 @Component({
-  selector: 'app-vertical-split-pane',
-  templateUrl: './vertical-split-pane.component.html',
-  styleUrls: ['./vertical-split-pane.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-vertical-split-pane',
+    templateUrl: './vertical-split-pane.component.html',
+    styleUrls: ['./vertical-split-pane.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class VerticalSplitPaneComponent {
   @ViewChild('leftPane', {static: true}) leftPaneRef!: ElementRef<HTMLElement>;

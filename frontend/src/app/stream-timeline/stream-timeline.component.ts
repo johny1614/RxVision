@@ -3,13 +3,14 @@ import {Stream} from "../stream/Stream";
 import {markerWidthPx, streamHeightPx} from "../../ui/uiConsts";
 
 @Component({
-  selector: 'app-stream-timeline',
-  templateUrl: './stream-timeline.component.html',
-  styleUrls: ['./stream-timeline.component.css'],
-  encapsulation: ViewEncapsulation.None,
-  host: {
-    '[style.--stream-color]': 'stream?.color'
-  }
+    selector: 'app-stream-timeline',
+    templateUrl: './stream-timeline.component.html',
+    styleUrls: ['./stream-timeline.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    host: {
+        '[style.--stream-color]': 'stream?.color'
+    },
+    standalone: false
 })
 export class StreamTimelineComponent {
 

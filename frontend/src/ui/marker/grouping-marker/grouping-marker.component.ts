@@ -6,8 +6,9 @@ import {markerWidthPx} from "../../uiConsts";
     selector: 'app-grouping-marker',
     templateUrl: './grouping-marker.component.html',
     styleUrls: ['./grouping-marker.component.scss'],
-    encapsulation: ViewEncapsulation.None
-  }
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
+}
 )
 export class GroupingMarkerComponent {
   @Input() marker!: GroupingMarker;

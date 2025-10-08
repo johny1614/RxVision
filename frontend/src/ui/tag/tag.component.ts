@@ -1,10 +1,11 @@
 import {Component, Input, HostBinding, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'app-tag',
-  templateUrl: './tag.component.html',
-  styleUrls: ['./tag.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-tag',
+    templateUrl: './tag.component.html',
+    styleUrls: ['./tag.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class TagComponent {
   @Input() text = '';

@@ -5,10 +5,11 @@ import {Color} from "../../Color";
 import {markerWidthPx} from "../../uiConsts";
 
 @Component({
-  selector: 'app-x-marker',
-  templateUrl: './x-marker.component.html',
-  styleUrl: './x-marker.component.scss',
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-x-marker',
+    templateUrl: './x-marker.component.html',
+    styleUrl: './x-marker.component.scss',
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class XMarkerComponent {
 

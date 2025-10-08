@@ -11,9 +11,10 @@ declare const chrome: any;
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class AppComponent implements OnInit {
   valuesA = [2222, 3333];

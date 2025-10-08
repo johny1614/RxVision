@@ -12,7 +12,8 @@ import { Marker } from '../Marker';
 import { MarkerTooltipComponent } from './marker-tooltip.component';
 
 @Directive({
-  selector: '[appMarkerTooltip]'
+    selector: '[appMarkerTooltip]',
+    standalone: false
 })
 export class MarkerTooltipDirective implements OnDestroy {
   @Input()
