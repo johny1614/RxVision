@@ -2,7 +2,8 @@
   "name": "rx-vision-root",
   "private": true,
   "workspaces": [
-    "demo-app",
+    "apps/*",
+    "packages/*",
     "chrome-devtools",
     "chrome-devtools/test/client",
     "chrome-devtools/test/host",
@@ -11,7 +12,6 @@
   ],
   "scripts": {
     "build:extension": "npm -w frontend run build && npm -w chrome-devtools run build",
-    "start:demo-app": "npm -w demo-app start",
     "start:dev": "npm run start:frontend",
     "start:frontend": "npm -w frontend start",
     "start:host": "npm -w chrome-devtools/test/host run dev",
