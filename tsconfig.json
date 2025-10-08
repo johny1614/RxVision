@@ -15,6 +15,9 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "paths": {
+      "api": [
+        "./dist/api"
+      ],
       "shared": ["./packages/shared/src/public-api"],
       "shared/*": ["./packages/shared/src/lib/*"]
     },
@@ -37,10 +40,10 @@
       "path": "./packages/shared/tsconfig.spec.json"
     },
     {
-      "path": "./apps/tsconfig.app.json"
+      "path": "./apps/demo-app/tsconfig.app.json"
     },
     {
-      "path": "./apps/tsconfig.spec.json"
+      "path": "./apps/demo-app/tsconfig.spec.json"
     },
     {
       "path": "./apps/demo-app/tsconfig.app.json"
@@ -53,6 +56,9 @@
     },
     {
       "path": "./packages/shared/tsconfig.spec.json"
+    },
+    {
+      "path": "./packages/api/tsconfig.lib.json"
     }
   ],
   "files": []
