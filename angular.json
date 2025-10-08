@@ -3,32 +3,6 @@
   "version": 1,
   "newProjectRoot": "packages",
   "projects": {
-    "shared": {
-      "projectType": "library",
-      "root": "packages/shared",
-      "sourceRoot": "packages/shared/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:ng-packagr",
-          "configurations": {
-            "production": {
-              "tsConfig": "packages/shared/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "packages/shared/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular/build:karma",
-          "options": {
-            "tsConfig": "packages/shared/tsconfig.spec.json"
-          }
-        }
-      }
-    },
     "demo-app": {
       "projectType": "application",
       "schematics": {
@@ -36,27 +10,27 @@
           "style": "scss"
         }
       },
-      "root": "apps",
-      "sourceRoot": "apps/src",
+      "root": "apps/demo-app",
+      "sourceRoot": "apps/demo-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "apps/src/main.ts",
+            "browser": "apps/demo-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "apps/tsconfig.app.json",
+            "tsConfig": "apps/demo-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/public"
+                "input": "apps/demo-app/public"
               }
             ],
             "styles": [
-              "apps/src/styles.scss"
+              "apps/demo-app/src/styles.scss"
             ]
           },
           "configurations": {
@@ -105,16 +79,46 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "apps/tsconfig.spec.json",
+            "tsConfig": "apps/demo-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/public"
+                "input": "apps/demo-app/public"
               }
             ],
             "styles": [
-              "apps/src/styles.scss"
+              "apps/demo-app/src/styles.scss"
+            ]
+          }
+        }
+      }
+    },
+    "shared": {
+      "projectType": "library",
+      "root": "packages/shared",
+      "sourceRoot": "packages/shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "packages/shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "packages/shared/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
             ]
           }
         }

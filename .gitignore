@@ -44,3 +44,4 @@ pnpm-debug.log*
 /chrome-devtools/.idea/modules.xml
 /api/.idea/vcs.xml
 /chrome-devtools/.idea/vcs.xml
+/.angular/
