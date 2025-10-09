@@ -1,0 +1,8 @@
+<header><h2>Host (:4202)</h2></header>
+<div style="margin-bottom: 16px">
+    <input #streamName id="host-stream-name" value="Host stream" placeholder="stream name"/>
+    <input #emissionName id="host-emission-name" value="" placeholder="emission name"/> --->
+    <button (click)="onEmitClick()" >Emit emission from Host</button>
+</div>
+<button (click)="onClearClick()">Clear emissions</button>
+<iframe id="frame-id-to-pass" src="http://localhost:4201"></iframe>

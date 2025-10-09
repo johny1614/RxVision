@@ -59,6 +59,18 @@
     },
     {
       "path": "./packages/api/tsconfig.lib.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-host/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-host/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-client/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-client/tsconfig.spec.json"
     }
   ],
   "files": []
