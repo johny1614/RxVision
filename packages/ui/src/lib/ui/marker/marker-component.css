@@ -1,0 +1,4 @@
+app-marker {
+  position: absolute;
+  will-change: transform;
+}

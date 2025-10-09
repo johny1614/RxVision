@@ -1,0 +1,12 @@
+<span
+  #tooltip
+  class="marker-tooltip"
+  [ngClass]="placement"
+  [style.left.px]="markerTooltipPosition?.left"
+  [style.top.px]="markerTooltipPosition?.top"
+>
+  <span class="marker-tooltip__content">
+    {{ marker.displayValue }}
+  </span>
+  <span class="marker-tooltip__arrow" aria-hidden="true"></span>
+</span>

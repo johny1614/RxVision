@@ -1,21 +1,22 @@
-import {Component, DestroyRef, Inject, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, DestroyRef, Inject, OnInit, Optional, ViewEncapsulation} from '@angular/core';
 import {Router} from "@angular/router";
 import {IS_DEVELOPER_MODE} from "../isDeveloperMode";
 import {PanelMessageService} from "./panel/panel-message.service";
-import {combineLatest} from "rxjs";
+import {combineLatest, Observable, Subject, timer} from "rxjs";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {Emission} from "./emission/emission.model";
-import {createAbsoluteTimedObservable} from "./util/createAbsoluteTimedObservable";
+import {createAbsoluteTimedObservable} from "ui";
 
 declare const chrome: any;
 
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
+    selector: 'app-root', // TODO change name!
+    templateUrl: './ui-app.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: false
 })
-export class AppComponent implements OnInit {
+export class UiAppComponent implements OnInit {
   valuesA = [2222, 3333];
   delaysA = [0, 1200];
   delaysB = [400, 1600]
@@ -31,7 +32,7 @@ export class AppComponent implements OnInit {
 
   constructor(private router: Router,
               private destroyRef: DestroyRef,
-              @Inject(IS_DEVELOPER_MODE) private isDeveloperMode: boolean,
+              @Optional() @Inject(IS_DEVELOPER_MODE) private isDeveloperMode: boolean,
               private readonly panelMessageService: PanelMessageService,
   ) {
     if (this.isDeveloperMode) {

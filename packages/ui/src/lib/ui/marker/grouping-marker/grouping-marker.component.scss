@@ -1,0 +1,15 @@
+app-grouping-marker {
+  user-select: none;
+}
+
+.circle {
+  width: calc(var(--marker-size) - 2 * var(--border-width));
+  height: calc(var(--marker-size) - 2 * var(--border-width));
+  border-radius: 50%;
+  border: var(--border-width) solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--marker-size) * 0.6);
+  color: white;
+}

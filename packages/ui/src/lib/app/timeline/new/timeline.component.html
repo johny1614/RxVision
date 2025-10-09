@@ -30,11 +30,11 @@
 
 <button mat-button *ngIf="requestedTimelineRange && showRequestedTimelineRange"
         style="position: absolute;top:90px;"
-        [style.width.px]="requestedTimelineButtonWid th"
+        [style.width.px]="requestedTimelineButtonWidth"
         [style.left.px]="positionForLoopButton"
         (click)="onRequestedTimelineAccepted($event)"
         (mouseup)="$event.stopPropagation()"
 >
-  Lupa
+    Lupa
   {{ requestedTimelineRange.getLabel() }}
 </button>
