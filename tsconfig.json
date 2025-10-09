@@ -40,16 +40,16 @@
       "path": "./packages/shared/tsconfig.spec.json"
     },
     {
-      "path": "./apps/demo-app/tsconfig.app.json"
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.app.json"
     },
     {
-      "path": "./apps/demo-app/tsconfig.spec.json"
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.spec.json"
     },
     {
-      "path": "./apps/demo-app/tsconfig.app.json"
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.app.json"
     },
     {
-      "path": "./apps/demo-app/tsconfig.spec.json"
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.spec.json"
     },
     {
       "path": "./packages/shared/tsconfig.lib.json"

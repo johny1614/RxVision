@@ -10,27 +10,27 @@
           "style": "scss"
         }
       },
-      "root": "apps/demo-app",
-      "sourceRoot": "apps/demo-app/src",
+      "root": "apps/sandboxes/demo-app",
+      "sourceRoot": "apps/sandboxes/demo-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "apps/demo-app/src/main.ts",
+            "browser": "apps/sandboxes/demo-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "apps/demo-app/tsconfig.app.json",
+            "tsConfig": "apps/sandboxes/demo-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/demo-app/public"
+                "input": "apps/sandboxes/demo-app/public"
               }
             ],
             "styles": [
-              "apps/demo-app/src/styles.scss"
+              "apps/sandboxes/demo-app/src/styles.scss"
             ]
           },
           "configurations": {
@@ -79,16 +79,16 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "apps/demo-app/tsconfig.spec.json",
+            "tsConfig": "apps/sandboxes/demo-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/demo-app/public"
+                "input": "apps/sandboxes/demo-app/public"
               }
             ],
             "styles": [
-              "apps/demo-app/src/styles.scss"
+              "apps/sandboxes/demo-app/src/styles.scss"
             ]
           }
         }
