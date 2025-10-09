@@ -71,6 +71,12 @@
     },
     {
       "path": "./apps/sandboxes/iframe-client/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/sandboxes/dev/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/dev/tsconfig.spec.json"
     }
   ],
   "files": []
