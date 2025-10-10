@@ -15,8 +15,11 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "paths": {
-      "api": [
-        "./dist/api"
+      "rx-vision": [
+        "./packages/rx-vision/src/public-api.ts"
+      ],
+      "rx-vision/*": [
+        "./packages/rx-vision/src/lib/*"
       ],
       "shared": [
         "./packages/shared/src/public-api"
@@ -24,8 +27,12 @@
       "shared/*": [
         "./packages/shared/src/lib/*"
       ],
-      "ui": ["./packages/ui/src/public-api"],
-      "ui/*": ["./packages/ui/src/lib/*"]
+      "ui": [
+        "./packages/ui/src/public-api"
+      ],
+      "ui/*": [
+        "./packages/ui/src/lib/*"
+      ]
     },
     "importHelpers": true,
     "target": "ES2022",
