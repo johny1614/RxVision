@@ -1,10 +1,10 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {AppModule} from "ui/app/app.module";
+import {RxVisionModule} from "./rx-vision.module";
 
 @Component({
     selector: 'rx-vision',
     imports: [
-        AppModule
+        RxVisionModule
     ],
     template: `
         <app-new-panel></app-new-panel>
