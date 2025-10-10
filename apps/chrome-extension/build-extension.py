@@ -25,7 +25,7 @@ def copy_extension_files():
             shutil.copy2(src, dst)
 
 
-def copy_frontend_build():
+def copy_ui_angular_build():
     print("Copying built Angular files...")
     for item in os.listdir(ui_build_path):
         src = os.path.join(ui_build_path, item)
@@ -41,7 +41,7 @@ def copy_frontend_build():
 def main():
     create_dest_directories()
     copy_extension_files()
-    copy_frontend_build()
+    copy_ui_angular_build()
     print("Done!")
 
 

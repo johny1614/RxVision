@@ -1,6 +1,0 @@
-@for (marker of stream.emissionMarkers; track marker) {
-  <app-marker [color]="stream.color"
-              [marker]="marker"
-              [style.transform]="'translateX(' + getMarkerTranslateXPosition(marker.position) + 'px) translateY(-50%)'"
-  ></app-marker>
-}

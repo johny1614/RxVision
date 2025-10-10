@@ -6,13 +6,10 @@
 /dist/
 /**/dist/
 */dist
-/frontend/.angular/
 
 # IDE & editors
 */.idea/
-/frontend/.idea/
 /.vscode/
-/frontend/.vscode/
 /*.iml
 
 # system files
@@ -30,10 +27,6 @@ pnpm-debug.log*
 .env.local
 .env.*.local
 
-# lock files (jeśli chcesz trzymać tylko jeden globalny)
-# /frontend/package-lock.json
-# /api/package-lock.json
-# /chrome-extension/package-lock.json
 
 # misc
 *.swp

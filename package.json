@@ -3,14 +3,10 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*",
-    "frontend",
-    "api"
+    "packages/*"
   ],
   "scripts": {
     "build:extension": "ng build ui-host --output-hashing=none && npm -w apps/chrome-extension run build",
-    "start:dev": "npm run start:frontend",
-    "start:frontend": "npm -w frontend start",
     "start:iframe-test-apps": "npm-run-all --parallel start:host start:client",
     "publish:api": "npm publish -w api --access public",
     "build:api": "npm -w api run build",

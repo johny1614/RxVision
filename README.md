@@ -80,7 +80,7 @@ This development mode allows you to work on RxVision UI and see changes in real 
    npm run start:dev
    ```
 4. Open http://localhost:4200 in a new browser tab
-5. Any code modifications in `/frontend` directory will be automatically rebuilt and reflected in the browser.
+5. Any code modifications in `packages/ui` directory will be automatically rebuilt and reflected in the browser.
 
 
 ## Chrome devtools development
@@ -126,7 +126,7 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
   Its build (npm run build) output is Chrome extension to be loaded in chrome browser *
   **No domain/UI logic resides here.**
 
-- **frontend/**  
+- **ui/**  
   *RxVision UI, domain and application logic.*
   *Can be run with ng serve for dev purposes.*
 
