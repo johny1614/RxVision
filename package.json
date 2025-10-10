@@ -7,10 +7,8 @@
   ],
   "scripts": {
     "build:extension": "ng build ui-host --output-hashing=none && npm -w apps/chrome-extension run build",
-    "start:iframe-test-apps": "npm-run-all --parallel start:host start:client",
-    "publish:api": "npm publish -w api --access public",
-    "build:api": "npm -w api run build",
-    "patch:api": "npm version patch -w api"
+    "publish:api": "npm publish -w packages/api --access public",
+    "build:api": "npm -w packages/api run build"
   },
   "dependencies": {
     "@angular/common": "^20.3.4",
