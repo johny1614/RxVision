@@ -3,7 +3,7 @@
        [ngClass]="{'chosen-range': timelineRange.equals(timelineRange) }"
        (click)="onTimelineRangeTitleClick(timelineRange)">
     {{ timelineRange.getLabel() }}
-    <ng-container *ngIf="!isLast"> ></ng-container>
+    <ng-container *ngIf="!isLast">&nbsp;>&nbsp;</ng-container>
   </div>
 </ng-container>
 
@@ -12,15 +12,13 @@
      (mousemove)="onMouseMove($event)"
      (mousedown)="onMouseDown($event)"
      (mouseup)="onMouseUp()"
-     style="cursor: text; position: relative;height:20px;"
      [style.background]="getBackground()"
 >
   <ng-container *ngIf="timelineSpecification">
     <div *ngFor="let tick of timelineSpecification.ticks;"
          style="position:relative; height:12px;width:0.1px;background:lightseagreen;display: inline-block;"
          [style.transform]="'translateX(' + tick.position + 'px)'">
-      <span
-        style="font-size: 6px;vertical-align: top; transform: translateX(2px);display: inline-block;cursor: default;user-select: none;">
+      <span>
       {{ getDisplayedTimeValue(tick.time) }}
       </span>
     </div>

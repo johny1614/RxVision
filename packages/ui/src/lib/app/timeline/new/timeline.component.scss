@@ -1,5 +1,6 @@
 .range {
   cursor: default;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .chosen-range {
@@ -10,4 +11,15 @@
 .arrow-next-range {
   font-weight: 400;
   color: black;
+}
+
+#timeline-div {
+  cursor: text;
+  position: relative;
+  height: 20px;
+
+  span{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 6px;vertical-align: top; transform: translateX(2px);display: inline-block;cursor: default;user-select: none;
+  }
 }

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {AppModule} from "ui/app/app.module";
 
 @Component({
@@ -9,7 +9,12 @@ import {AppModule} from "ui/app/app.module";
     template: `
         <app-new-panel></app-new-panel>
     `,
-    styles: ``
+    encapsulation: ViewEncapsulation.None,
+    styles: `
+    :host, :host * {
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+    }
+    `
 })
 export class RxVisionComponent {
 
