@@ -1,7 +1,6 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {PanelEmissionsTimelineComponent} from "./app/emissions-timeline/panel-emissions-timeline.component";
-import {ColorModifier} from "./app/util/ColorModifier";
 import {NewPanelComponent} from "./app/panel/new/new-panel.component";
 import {StreamTimelineComponent} from "./app/stream-timeline/stream-timeline.component";
 import {MatIconModule} from "@angular/material/icon";
@@ -15,6 +14,7 @@ import {VerticalSplitPaneComponent} from "./app/panel/new/vertical-split-pane/ve
 import {TagComponent} from "./ui/tag/tag.component";
 import {GroupingMarkerComponent} from "./ui/marker/grouping-marker/grouping-marker.component";
 import {MarkerComponent} from "./ui/marker/marker-component";
+import {ColorModifier} from "ui/util/ColorModifier";
 
 @NgModule({
     declarations: [
