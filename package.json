@@ -4,23 +4,17 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "chrome-devtools",
-    "chrome-devtools/test/client",
-    "chrome-devtools/test/host",
     "frontend",
     "api"
   ],
   "scripts": {
-    "build:extension": "npm -w frontend run build && npm -w chrome-devtools run build",
+    "build:extension": "ng build ui-host && npm -w apps/chrome-extension run build",
     "start:dev": "npm run start:frontend",
     "start:frontend": "npm -w frontend start",
-    "start:host": "npm -w chrome-devtools/test/host run dev",
-    "start:client": "npm -w chrome-devtools/test/client run dev",
     "start:iframe-test-apps": "npm-run-all --parallel start:host start:client",
     "publish:api": "npm publish -w api --access public",
     "build:api": "npm -w api run build",
-    "patch:api": "npm version patch -w api",
-    "clean:modules": "rimraf node_modules package-lock.json api/node_modules api/package-lock.json demo-app/node_modules demo-app/package-lock.json chrome-devtools/node_modules chrome-devtools/package-lock.json chrome-devtools/test/client/node_modules chrome-devtools/test/client/package-lock.json chrome-devtools/test/host/node_modules chrome-devtools/test/host/package-lock.json frontend/node_modules frontend/package-lock.json"
+    "patch:api": "npm version patch -w api"
   },
   "dependencies": {
     "@angular/common": "^20.3.4",

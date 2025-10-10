@@ -89,6 +89,12 @@
     },
     {
       "path": "./packages/ui/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/ui-host/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/ui-host/tsconfig.spec.json"
     }
   ],
   "files": []
