@@ -64,8 +64,6 @@ class ClientMessageHandler {
             this.port.postMessage(clientMessage.data);
         }
         if (clientMessage.data.type === 'CLEAR_EMISSIONS') {
-            // jak jestesmy na iframe cliencie/stackblitzu to tutaj tego nie ma?
-            console.log('elooooo');
             this.port.postMessage(clientMessage.data);
         }
     }
