@@ -1,0 +1,12 @@
+{
+  "name": "demo-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "rx-vision": "^0.0.18"
+  }
+}

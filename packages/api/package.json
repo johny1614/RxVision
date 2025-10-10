@@ -1,0 +1,23 @@
+{
+  "name": "rx-vision",
+  "version": "0.0.18",
+  "module": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "build": "node scripts/inject-version.js && tsc -p tsconfig.lib.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "rxjs": "^7.8.1"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ]
+}

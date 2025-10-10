@@ -1,8 +1,0 @@
-{
-  "name": "chrome-devtools",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "build": "node build-extension.js"
-  }
-}

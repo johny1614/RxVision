@@ -1,0 +1,101 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "moduleResolution": "bundler",
+  "moduleDetection": "force",
+  "compilerOptions": {
+    "useDefineForClassFields": false,
+    "strict": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "api": [
+        "./dist/api"
+      ],
+      "shared": [
+        "./packages/shared/src/public-api"
+      ],
+      "shared/*": [
+        "./packages/shared/src/lib/*"
+      ],
+      "ui": ["./packages/ui/src/public-api"],
+      "ui/*": ["./packages/ui/src/lib/*"]
+    },
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "typeCheckHostBindings": true,
+    "strictTemplates": true
+  },
+  "references": [
+    {
+      "path": "./packages/shared/tsconfig.lib.json"
+    },
+    {
+      "path": "./packages/shared/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/demo-ap1/tsconfig.spec.json"
+    },
+    {
+      "path": "./packages/shared/tsconfig.lib.json"
+    },
+    {
+      "path": "./packages/shared/tsconfig.spec.json"
+    },
+    {
+      "path": "./packages/api/tsconfig.lib.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-host/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-host/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-client/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/iframe-client/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/sandboxes/dev/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/sandboxes/dev/tsconfig.spec.json"
+    },
+    {
+      "path": "./packages/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "./packages/ui/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/ui-host/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/ui-host/tsconfig.spec.json"
+    }
+  ],
+  "files": []
+}

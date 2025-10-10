@@ -5,13 +5,11 @@
 # build output
 /dist/
 /**/dist/
-/frontend/.angular/
+*/dist
 
 # IDE & editors
-/.idea/
-/frontend/.idea/
+*/.idea/
 /.vscode/
-/frontend/.vscode/
 /*.iml
 
 # system files
@@ -29,18 +27,13 @@ pnpm-debug.log*
 .env.local
 .env.*.local
 
-# lock files (jeśli chcesz trzymać tylko jeden globalny)
-# /frontend/package-lock.json
-# /api/package-lock.json
-# /chrome-devtools/package-lock.json
 
 # misc
 *.swp
 *.swo
-/chrome-devtools/.idea/.gitignore
 /api/.idea/api.iml
-/chrome-devtools/.idea/chrome-devtools.iml
 /api/.idea/modules.xml
-/chrome-devtools/.idea/modules.xml
 /api/.idea/vcs.xml
-/chrome-devtools/.idea/vcs.xml
+/.angular/
+/apps/chrome-extension/.idea/
+/.idea/

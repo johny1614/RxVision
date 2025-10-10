@@ -80,11 +80,11 @@ This development mode allows you to work on RxVision UI and see changes in real 
    npm run start:dev
    ```
 4. Open http://localhost:4200 in a new browser tab
-5. Any code modifications in `/frontend` directory will be automatically rebuilt and reflected in the browser.
+5. Any code modifications in `packages/ui` directory will be automatically rebuilt and reflected in the browser.
 
 
 ## Chrome devtools development
-This development mode allows you to check changes connected to chrome-devtools extension technicalities.
+This development mode allows you to check changes connected to chrome extension technicalities.
 1. Follow steps 1-2 from [Frontend development](#frontend-development)
 2. Run:
    ```bash
@@ -95,6 +95,7 @@ This development mode allows you to check changes connected to chrome-devtools e
    ```bash
    npm run build:extension
    ```  
+   // TODO no longer
    This script compiles the extension into `chrome-devtools/dist/rxvis-extension` directory.
 5. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `chrome-devtools/dist/rxvis-extension` directory).<br><br>
    If you've done this step before – just reload is enough.
@@ -120,12 +121,12 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
   *Realistic Angular app demonstrating RxVision end-to-end in devtools tab.*  
   Uses npm package from /api and expects the Chrome extension to be loaded.
 
-- **chrome-devtools/**  
-  *Chrome DevTools host & glue.*<br>
+- **chrome-extension/**  
+  *Chrome Extension host & glue.*<br>
   Its build (npm run build) output is Chrome extension to be loaded in chrome browser *
   **No domain/UI logic resides here.**
 
-- **frontend/**  
+- **ui/**  
   *RxVision UI, domain and application logic.*
   *Can be run with ng serve for dev purposes.*
 

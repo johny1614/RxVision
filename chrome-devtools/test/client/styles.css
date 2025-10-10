@@ -1,6 +1,0 @@
-body { font-family: system-ui, sans-serif; margin: 24px; }
-header { display:flex; gap:12px; align-items:center; margin-bottom:16px; }
-iframe { width: 100%; height: 420px; border: 1px solid #ddd; border-radius: 8px; }
-.row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-button { padding:8px 12px; border-radius:8px; border:1px solid #ccc; cursor:pointer; }
-input { padding:8px; border-radius:8px; border:1px solid #ccc; width: 360px; }
