@@ -12,14 +12,14 @@ import {MarkerTooltipDirective} from "./ui/marker/marker-tooltip/marker-tooltip.
 import {TagComponent} from "./ui/tag/tag.component";
 import {GroupingMarkerComponent} from "./ui/marker/grouping-marker/grouping-marker.component";
 import {MarkerComponent} from "./ui/marker/marker-component";
-import {NewPanelComponent} from "./app/panel/new-panel.component";
+import {PanelComponent} from "./app/panel/panel.component";
 import { VerticalSplitPaneComponent } from "./app/panel/vertical-split-pane/vertical-split-pane.component";
 
 @NgModule({
     declarations: [
         TimelineComponent,
         StreamTimelineComponent,
-        NewPanelComponent,
+        PanelComponent,
         XIconComponent,
         PanelEmissionsTimelineComponent,
         XMarkerComponent,
@@ -36,7 +36,7 @@ import { VerticalSplitPaneComponent } from "./app/panel/vertical-split-pane/vert
         MatIconModule
     ],
     exports: [
-        NewPanelComponent
+        PanelComponent
     ]
 })
 export class RxVisionModule {

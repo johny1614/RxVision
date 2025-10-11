@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {createAbsoluteTimedObservable, Emission, RxVisionComponent} from "ui";
-import {PanelMessageService} from "ui/app/panel/panel-message.service";
+import {createAbsoluteTimedObservable, Emission, RxVisionComponent, UiApiService} from "ui";
 import {combineLatest} from "rxjs";
 
 @Component({
@@ -24,7 +23,7 @@ export class DevAppComponent {
 
 
     constructor(
-        private readonly panelMessageService: PanelMessageService
+        private readonly uiApiService: UiApiService
     ) {
 
 
@@ -32,13 +31,13 @@ export class DevAppComponent {
         this.A$.subscribe(value => {
             const time = Date.now() - startTime;
             const emission = new Emission(value, `time: ${time} value: ${value} `, time);
-            this.panelMessageService.addDeveloperEmission(emission, 'Salary$');
+            this.uiApiService.addDeveloperEmission(emission, 'Salary$');
         });
         this.B$.subscribe(value => {
             const time = Date.now() - startTime;
             const emission = new Emission(value, `time: ${time} value: ${value} \n`, time);
             console.log('emission B', emission.time);
-            this.panelMessageService.addDeveloperEmission(emission, 'Rent$');
+            this.uiApiService.addDeveloperEmission(emission, 'Rent$');
         });
 
         this.combinedAB$.subscribe(([a, b]) => {
@@ -48,7 +47,7 @@ export class DevAppComponent {
                 `time: ${time} Weather: ${a}, Rent: ${b}`,
                 time
             );
-            this.panelMessageService.addDeveloperEmission(emission, 'combined$');
+            this.uiApiService.addDeveloperEmission(emission, 'combined$');
         });
 
     }

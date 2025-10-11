@@ -1,15 +1,15 @@
 import {Injectable} from "@angular/core";
-import {PanelMessageService} from "../../../panel/panel-message.service";
 import {TimelineWidthStorage} from "../TimelineWidthStorage";
 import {FullTimelineOptimalGapTimeResolver} from "./FullTimelineOptimalGapTimeResolver";
 import {combineLatest, map, Observable, shareReplay} from "rxjs";
 import {TimelineFullRangeSpecification} from "./TimelineFullRangeSpecification";
+import {UiApiService} from "../../../../api/ui-api.service";
 
 @Injectable({providedIn: 'root'})
 export class TimelineFullRangeSpecificationStorage {
 
   constructor(
-    private panelMessageService: PanelMessageService,
+    private uiApiService: UiApiService,
     private timelineWidthStorage: TimelineWidthStorage,
     private timelineOptimalGapTimeCalculator: FullTimelineOptimalGapTimeResolver,
   ) {
@@ -17,7 +17,7 @@ export class TimelineFullRangeSpecificationStorage {
 
   select(): Observable<TimelineFullRangeSpecification> {
     // TODO niech to sie selektuje tylko gdy jest full range wybrany
-    return combineLatest([this.panelMessageService.emissions$, this.timelineWidthStorage.timelineAvailableWidthSpaceForTicks$])
+    return combineLatest([this.uiApiService.emissions$, this.timelineWidthStorage.timelineAvailableWidthSpaceForTicks$])
       .pipe(
         map(([emissions, timelineWidthSpaceForTicks]) => {
           const gap = this.timelineOptimalGapTimeCalculator.resolve(

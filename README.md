@@ -96,7 +96,7 @@ This development mode allows you to check changes connected to chrome extension 
    ```bash
    ng serve demo-app
    ```
-3. Optionally - modify the source code in `apps/chrome-extension` before building the extension
+3. Optionally - modify the source code in `apps/chrome/extension` before building the extension
 4. On another console run:
    ```bash
    npm run build:extension
@@ -127,12 +127,12 @@ This project is licensed under the **MIT License** – see the [LICENSE](LICENSE
 - **packages/ui**  
   *RxVision UI, domain and application logic.*
 
-- **apps/ui-host**  
+- **apps/chrome/ui-host**  
   *Angular application which hosts `packages/ui`.*
 
-- **apps/chrome-extension**  
+- **apps/chrome/extension**  
   *Chrome Extension host & glue.*  
-  Its build output is a Chrome extension with Angular application from `apps/ui-host`.
+  Its build output is a Chrome extension with Angular application from `apps/chrome/ui-host`.
 
 - **apps/sandboxes**  
   *Angular apps that are not considered vital for RxVision product itself.*  

@@ -41,16 +41,16 @@
   },
   "references": [
     {
-      "path": "./apps/sandboxes/demo-ap1/tsconfig.app.json"
+      "path": "./apps/sandboxes/demo-app/tsconfig.app.json"
     },
     {
-      "path": "./apps/sandboxes/demo-ap1/tsconfig.spec.json"
+      "path": "./apps/sandboxes/demo-app/tsconfig.spec.json"
     },
     {
-      "path": "./apps/sandboxes/demo-ap1/tsconfig.app.json"
+      "path": "./apps/sandboxes/demo-app/tsconfig.app.json"
     },
     {
-      "path": "./apps/sandboxes/demo-ap1/tsconfig.spec.json"
+      "path": "./apps/sandboxes/demo-app/tsconfig.spec.json"
     },
     {
       "path": "./packages/api/tsconfig.lib.json"
@@ -80,10 +80,10 @@
       "path": "./packages/ui/tsconfig.spec.json"
     },
     {
-      "path": "./apps/ui-host/tsconfig.app.json"
+      "path": "./apps/chrome/ui-host/tsconfig.app.json"
     },
     {
-      "path": "./apps/ui-host/tsconfig.spec.json"
+      "path": "./apps/chrome/ui-host/tsconfig.spec.json"
     }
   ],
   "files": []

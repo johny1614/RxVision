@@ -35,5 +35,4 @@ pnpm-debug.log*
 /api/.idea/modules.xml
 /api/.idea/vcs.xml
 /.angular/
-/apps/chrome-extension/.idea/
 /.idea/

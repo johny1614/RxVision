@@ -2,8 +2,8 @@ import os
 import shutil
 
 extension_files_to_copy_path = './src/chrome-extension-js'
-ui_build_path = './../../dist/ui-host/browser'
-extension_dest_path = './../../dist/rxvision-extension'
+ui_build_path = './../../../dist/chrome-extension-ui-host/browser'
+extension_dest_path = './../../../dist/rxvision-extension'
 extension_dest_path_browser = extension_dest_path + '/browser'
 
 

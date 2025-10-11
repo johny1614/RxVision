@@ -14,13 +14,13 @@ import {Stream} from "../stream/Stream";
 import {markerWidthPx, streamNameHeightPx, streamNamesMarginBetweenPx} from "../../ui/uiConsts";
 
 @Component({
-    selector: 'app-new-panel',
-    templateUrl: './new-panel.component.html',
-    styleUrls: ['./new-panel.component.scss'],
+    selector: 'app-panel',
+    templateUrl: './panel.component.html',
+    styleUrls: ['./panel.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: false
 })
-export class NewPanelComponent implements OnInit, AfterViewInit {
+export class PanelComponent implements OnInit, AfterViewInit {
 
     @HostBinding('style.display') display = 'block';
 

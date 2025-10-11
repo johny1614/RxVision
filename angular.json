@@ -436,34 +436,34 @@
         }
       }
     },
-    "ui-host": {
+    "chrome-extension-ui-host": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "apps/ui-host",
-      "sourceRoot": "apps/ui-host/src",
+      "root": "apps/chrome/ui-host",
+      "sourceRoot": "apps/chrome/ui-host/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "apps/ui-host/src/main.ts",
+            "browser": "apps/chrome/ui-host/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "apps/ui-host/tsconfig.app.json",
+            "tsConfig": "apps/chrome/ui-host/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/ui-host/public"
+                "input": "apps/chrome/ui-host/public"
               }
             ],
             "styles": [
-              "apps/ui-host/src/styles.scss"
+              "apps/chrome/ui-host/src/styles.scss"
             ]
           },
           "configurations": {
@@ -494,10 +494,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ui-host:build:production"
+              "buildTarget": "chrome-extension-ui-host:build:production"
             },
             "development": {
-              "buildTarget": "ui-host:build:development"
+              "buildTarget": "chrome-extension-ui-host:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -512,16 +512,16 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "apps/ui-host/tsconfig.spec.json",
+            "tsConfig": "apps/chrome/ui-host/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "apps/ui-host/public"
+                "input": "apps/chrome/ui-host/public"
               }
             ],
             "styles": [
-              "apps/ui-host/src/styles.scss"
+              "apps/chrome/ui-host/src/styles.scss"
             ]
           }
         }

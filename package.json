@@ -3,10 +3,12 @@
   "private": true,
   "workspaces": [
     "apps/*",
+    "apps/chrome/*",
+    "apps/sandboxes/*",
     "packages/*"
   ],
   "scripts": {
-    "build:extension": "ng build ui-host --output-hashing=none && npm -w apps/chrome-extension run build",
+    "build:extension": "ng build chrome-extension-ui-host --output-hashing=none && npm -w apps/chrome/extension run build",
     "publish:api": "npm publish -w packages/api --access public",
     "build:api": "npm -w packages/api run build"
   },

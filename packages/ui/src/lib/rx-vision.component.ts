@@ -7,7 +7,7 @@ import {RxVisionModule} from "./rx-vision.module";
         RxVisionModule
     ],
     template: `
-        <app-new-panel></app-new-panel>
+        <app-panel></app-panel>
     `,
     encapsulation: ViewEncapsulation.None,
     styles: `
