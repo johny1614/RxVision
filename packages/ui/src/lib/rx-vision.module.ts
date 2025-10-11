@@ -14,7 +14,6 @@ import {VerticalSplitPaneComponent} from "./app/panel/new/vertical-split-pane/ve
 import {TagComponent} from "./ui/tag/tag.component";
 import {GroupingMarkerComponent} from "./ui/marker/grouping-marker/grouping-marker.component";
 import {MarkerComponent} from "./ui/marker/marker-component";
-import {ColorModifier} from "ui/util/ColorModifier";
 
 @NgModule({
     declarations: [
@@ -38,8 +37,7 @@ import {ColorModifier} from "ui/util/ColorModifier";
     ],
     exports: [
         NewPanelComponent
-    ],
-    providers: [ColorModifier]
+    ]
 })
 export class RxVisionModule {
 }

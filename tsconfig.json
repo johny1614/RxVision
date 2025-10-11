@@ -21,12 +21,6 @@
       "rx-vision/*": [
         "./packages/rx-vision/src/lib/*"
       ],
-      "shared": [
-        "./packages/shared/src/public-api"
-      ],
-      "shared/*": [
-        "./packages/shared/src/lib/*"
-      ],
       "ui": [
         "./packages/ui/src/public-api"
       ],
@@ -47,12 +41,6 @@
   },
   "references": [
     {
-      "path": "./packages/shared/tsconfig.lib.json"
-    },
-    {
-      "path": "./packages/shared/tsconfig.spec.json"
-    },
-    {
       "path": "./apps/sandboxes/demo-ap1/tsconfig.app.json"
     },
     {
@@ -63,12 +51,6 @@
     },
     {
       "path": "./apps/sandboxes/demo-ap1/tsconfig.spec.json"
-    },
-    {
-      "path": "./packages/shared/tsconfig.lib.json"
-    },
-    {
-      "path": "./packages/shared/tsconfig.spec.json"
     },
     {
       "path": "./packages/api/tsconfig.lib.json"

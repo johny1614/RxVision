@@ -1,12 +1,10 @@
 import {Component} from '@angular/core';
 import {interval, map, take} from 'rxjs';
 import {addRxVisionEmission, clearAllRxVisionEmissions} from 'rx-vision';
-import {Shared} from "shared";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [Shared],
     templateUrl: './app.component.html'
 })
 export class AppComponent {
