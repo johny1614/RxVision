@@ -23,14 +23,16 @@ Coming soon (demo video will be added here)
 ## Basic usage in your project
 
 1. Make sure you have RxVision extension installed from [Chrome Web Store](https://chrome.google.com/webstore/detail/rxvision-rxjs-streams-v/ldgfbffkpkdmdmflfjdlnaclhkmjblmd)
-2. Install the library in your project with:
+2. Install the library in your project with one of these commands:
 
    ```bash
    npm install rx-vision
    ```
-   or
    ```bash
    yarn add rx-vision
+   ```
+    ```bash
+   pnpm add rx-vision
    ```
    depending on your package manager.
 
@@ -67,42 +69,44 @@ Contributions are welcome!
 4. Open a pull request
 ---
 
-## Frontend development
+## UI development
 Most of the time you want to develop in this mode.
 This development mode allows you to work on RxVision UI and see changes in real time in the browser.
 1. Clone this repository to your local machine
 2. Make sure you have installed:
     - Python 3.11+ (`python --version`)
-    - Node.js 18+ (`node --version`)
-    - Angular CLI 17+ (`ng version`)
+    - Node.js 22.14+ (`node --version`)
+    - Angular CLI 20+ (`ng version`)
 3. Run:
    ```bash
-   npm run start:dev
+   npm install
+   ```
+4. Run:
+   ```bash
+   ng serve dev
    ```
 4. Open http://localhost:4200 in a new browser tab
 5. Any code modifications in `packages/ui` directory will be automatically rebuilt and reflected in the browser.
 
 
-## Chrome devtools development
+## Chrome extension development
 This development mode allows you to check changes connected to chrome extension technicalities.
-1. Follow steps 1-2 from [Frontend development](#frontend-development)
+1. Follow steps 1-3 from [UI development](#ui-development)
 2. Run:
    ```bash
-   npm run start:demo-app
+   ng serve demo-app
    ```
-3. Optionally - modify the source code before building the extension
+3. Optionally - modify the source code in `apps/chrome-extension` before building the extension
 4. On another console run:
    ```bash
    npm run build:extension
    ```  
-   // TODO no longer
-   This script compiles the extension into `chrome-devtools/dist/rxvis-extension` directory.
-5. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `chrome-devtools/dist/rxvis-extension` directory).<br><br>
+   This script compiles the extension into `dist/rxvision-extension` directory.
+5. Navigate in Chrome browser to `chrome://extensions` – enable developer mode and load unpacked extension (pass `dist/rxvision-extension` directory).<br><br>
    If you've done this step before – just reload is enough.
-6. Open http://localhost:4201 in a new browser tab
+6. Open http://localhost:4200 in a new browser tab
 7. RxVision UI is available in Chrome DevTools (F12 → RxVision tab)
 ---
-
 
 ## Issues & Support
 - Found a bug? Please open an [issue](../../issues).
@@ -114,24 +118,25 @@ This development mode allows you to check changes connected to chrome extension 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
 ---
-
 ## Project Structure
 
-- **demo-app/**  
-  *Realistic Angular app demonstrating RxVision end-to-end in devtools tab.*  
-  Uses npm package from /api and expects the Chrome extension to be loaded.
+- **packages/api**  
+  *Npm package* — [rx-vision](https://www.npmjs.com/package/rx-vision)  
+  Stable API for sending emissions from user code to RxVision extension.
 
-- **chrome-extension/**  
-  *Chrome Extension host & glue.*<br>
-  Its build (npm run build) output is Chrome extension to be loaded in chrome browser *
-  **No domain/UI logic resides here.**
-
-- **ui/**  
+- **packages/ui**  
   *RxVision UI, domain and application logic.*
-  *Can be run with ng serve for dev purposes.*
 
-- **api/**  
-  *Npm package* - https://www.npmjs.com/package/rx-vision <br>
-  Stable API for sending emissions from user code to RxVision extension (as used in `demo-app`).  
-  Contains pure js - no Angular or Chrome-specific code.
+- **apps/ui-host**  
+  *Angular application which hosts `packages/ui`.*
 
+- **apps/chrome-extension**  
+  *Chrome Extension host & glue.*  
+  Its build output is a Chrome extension with Angular application from `apps/ui-host`.
+
+- **apps/sandboxes**  
+  *Angular apps that are not considered vital for RxVision product itself.*  
+  Purposes: development, presentation, testing.
+    - **demo-app** – Angular app used to test and demonstrate RxVision extension in DevTools.
+    - **dev** – Angular app used to develop RxVision UI as a standalone app (without Chrome extension).
+    - **iframe-host** & **iframe-client** – Angular apps used to test and demonstrate RxVision extension in iframes.
