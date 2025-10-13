@@ -1,13 +1,13 @@
-<div class="container">
-  <div class="left" #leftPane
+<div class="pane-container">
+  <div class="pane-left-side" #leftPane
        [style.flex-basis.px]="currentLeftPaneWidth">
     <ng-content select="[left-pane]"></ng-content>
   </div>
-  <div class="divider-vertical-line"
+  <div class="pane-divider-vertical-line"
        (pointerdown)="onDragStart($event)"
        (dblclick)="onHandleDoubleClick()"
   ></div>
-  <div class="right" #rightPane>
+  <div class="pane-right-side" #rightPane>
     <ng-content select="[right-pane]"></ng-content>
   </div>
 </div>

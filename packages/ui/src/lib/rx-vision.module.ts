@@ -1,6 +1,5 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {PanelEmissionsTimelineComponent} from "./app/emissions-timeline/panel-emissions-timeline.component";
 import {StreamTimelineComponent} from "./app/stream-timeline/stream-timeline.component";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
@@ -21,7 +20,6 @@ import { VerticalSplitPaneComponent } from "./app/panel/vertical-split-pane/vert
         StreamTimelineComponent,
         PanelComponent,
         XIconComponent,
-        PanelEmissionsTimelineComponent,
         XMarkerComponent,
         MarkerTooltipComponent,
         MarkerTooltipDirective,

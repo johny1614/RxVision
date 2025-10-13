@@ -47,14 +47,14 @@
     border-bottom-color: #111;
   }
 
-  &.right .marker-tooltip__arrow {
+  &.pane-right-side .marker-tooltip__arrow {
     left: -12px;
     top: 50%;
     transform: translateY(-50%);
     border-right-color: #111;
   }
 
-  &.left .marker-tooltip__arrow {
+  &.pane-left-side .marker-tooltip__arrow {
     right: -12px;
     top: 50%;
     transform: translateY(-50%);
@@ -65,5 +65,5 @@
 /* Drobny polish: animowane wejście – opcjonalnie */
 .marker-tooltip.top   { transform: translateY(-2px); }
 .marker-tooltip.bottom{ transform: translateY( 2px); }
-.marker-tooltip.left  { transform: translateX(-2px); }
-.marker-tooltip.right { transform: translateX( 2px); }
+.marker-tooltip.pane-left-side  { transform: translateX(-2px); }
+.marker-tooltip.pane-right-side { transform: translateX( 2px); }

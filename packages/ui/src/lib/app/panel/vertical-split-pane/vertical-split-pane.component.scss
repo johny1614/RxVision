@@ -1,18 +1,18 @@
 
-.container{
+.pane-container{
   display: flex;
   width:100%;
   flex: 0 0 auto;
   //border: 2px solid purple;
 }
 
-.divider-vertical-line {
+.pane-divider-vertical-line {
   flex-basis: 2px;
   background-color: black;
   cursor: col-resize;
 }
 
-.left {
+.pane-left-side {
   //background: yellow;
   display: block;
   margin-left: 2px;
@@ -22,7 +22,7 @@
   overflow: hidden;
 }
 
-.left * {
+.pane-left-side * {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -31,7 +31,7 @@
 .truncate { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
 
-.right{
+.pane-right-side{
   flex-grow: 1;   /* zajmuje wszystko co zostało */
   flex-shrink: 1; /* może się kurczyć przy braku miejsca */
   flex-basis: 0;  /* start od 0, reszta z grow */
