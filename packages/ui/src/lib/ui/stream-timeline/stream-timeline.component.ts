@@ -1,6 +1,6 @@
 import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {Stream} from "../stream/Stream";
 import {markerWidthPx, streamHeightPx} from "../../ui/uiConsts";
+import {Stream} from "../../app/stream/Stream";
 
 @Component({
     selector: 'app-stream-timeline',

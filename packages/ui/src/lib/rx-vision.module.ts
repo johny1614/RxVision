@@ -1,6 +1,5 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {StreamTimelineComponent} from "./app/stream-timeline/stream-timeline.component";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {TimelineComponent} from "./app/timeline/new/timeline.component";
@@ -12,7 +11,8 @@ import {TagComponent} from "./ui/tag/tag.component";
 import {GroupingMarkerComponent} from "./ui/marker/grouping-marker/grouping-marker.component";
 import {MarkerComponent} from "./ui/marker/marker-component";
 import {PanelComponent} from "./app/panel/panel.component";
-import { VerticalSplitPaneComponent } from "./app/panel/vertical-split-pane/vertical-split-pane.component";
+import {VerticalSplitPaneComponent} from "./ui/vertical-split-pane/vertical-split-pane.component";
+import {StreamTimelineComponent} from "./ui/stream-timeline/stream-timeline.component";
 
 @NgModule({
     declarations: [
