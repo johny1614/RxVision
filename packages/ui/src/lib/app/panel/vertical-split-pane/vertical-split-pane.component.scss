@@ -13,12 +13,11 @@
 }
 
 .pane-left-side {
-  //background: yellow;
   display: block;
   margin-left: 2px;
   flex-grow: 0;      /* nie rośnie */
   flex-shrink: 0;    /* nie kurczy się */
-  flex-basis: 60px; /* dokładnie 60px */
+  flex-basis: var(--left-pane-width, 70px); /* szerokość początkowa lub z CSS */
   overflow: hidden;
 }
 

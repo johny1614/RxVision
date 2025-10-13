@@ -47,7 +47,7 @@ export class DevAppComponent {
                 `time: ${time} Weather: ${a}, Rent: ${b}`,
                 time
             );
-            this.uiApiService.addDeveloperEmission(emission, 'combined$');
+            this.uiApiService.addDeveloperEmission(emission, 'combined');
         });
 
     }
