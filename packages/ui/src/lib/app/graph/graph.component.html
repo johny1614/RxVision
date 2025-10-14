@@ -1,22 +1,22 @@
 <app-vertical-split-pane>
   <div left-pane id="passed-left">
     <div [style.height.px]="timelineHeight"></div>
-    @for (stream of streams; track stream.id) {
+    @for (markerLane of markerLanes; track markerLane.id) {
       <app-tag
         [style.height.px]="streamNameHeightPx + streamNamesMarginBetweenPx"
         style="display:block; position: relative"
         [heightPx]="streamNameHeightPx"
-        [text]="stream.id" [color]="stream.color"></app-tag>
+        [text]="markerLane.id" [color]="markerLane.color"></app-tag>
     }
   </div>
   <div right-pane #timelineRightPane>
     <app-timeline></app-timeline>
   </div>
-  @for (stream of streams; track stream.id) {
+  @for (markerLane of markerLanes; track markerLane.id) {
     <div right-pane>
-      <app-stream-timeline [stream]="stream"
+      <ui-marker-lane [markerLane]="markerLane"
                            style="display: block;position: relative; height: 24px">
-      </app-stream-timeline>
+      </ui-marker-lane>
     </div>
   }
 </app-vertical-split-pane>

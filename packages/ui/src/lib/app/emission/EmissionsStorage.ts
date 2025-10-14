@@ -17,6 +17,7 @@ export class EmissionsStorage {
   }
 
   select(): Observable<{ [streamId: string]: Array<Marker> }> {
+    //   TODO - MarkersStorage combine within
     return combineLatest([
       this.uiApiService.emissions$,
       this.activeTimelineSpecificationStorage.selectActive()

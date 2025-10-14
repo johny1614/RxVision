@@ -2,7 +2,7 @@ app-marker {
   top: 50%;
 }
 
-app-stream-timeline::after {
+ui-marker-lane::after {
   content: "";
   position: absolute;
   top: 50%;

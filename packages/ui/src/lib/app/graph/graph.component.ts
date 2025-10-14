@@ -9,18 +9,18 @@ import {
     ViewEncapsulation
 } from "@angular/core";
 import {TimelineComponent} from "../timeline/timeline.component";
-import {StreamsStorage} from "../stream/StreamsStorage";
-import {Stream} from "../stream/Stream";
+import {MarkerLanesStorage} from "../marker/MarkerLanesStorage";
+import {MarkerLane} from "../marker/MarkerLane";
 import {markerWidthPx, streamNameHeightPx, streamNamesMarginBetweenPx} from "../../ui/uiConsts";
 
 @Component({
-    selector: 'app-panel',
-    templateUrl: './panel.component.html',
-    styleUrls: ['./panel.component.scss'],
+    selector: 'ui-graph',
+    templateUrl: './graph.component.html',
+    styleUrls: ['./graph.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: false
 })
-export class PanelComponent implements OnInit, AfterViewInit {
+export class GraphComponent implements OnInit, AfterViewInit {
 
     @HostBinding('style.display') display = 'block';
 
@@ -29,7 +29,7 @@ export class PanelComponent implements OnInit, AfterViewInit {
         return streamNameHeightPx;
     }
 
-    @HostBinding('style.--right-panel-margin-left.px')
+    @HostBinding('style.--right-graph-margin-left.px')
     get getRightPanelMarginLeft() {
         return markerWidthPx / 2;
     }
@@ -43,18 +43,18 @@ export class PanelComponent implements OnInit, AfterViewInit {
     readonly streamNamesMarginBetweenPx = streamNamesMarginBetweenPx;
     readonly streamNameHeightPx = streamNameHeightPx;
     timelineHeight: number = 0;
-    streams: Array<Stream>;
+    markerLanes: Array<MarkerLane>;
 
     private resizeObserver: ResizeObserver;
 
-    constructor(private streamsStorage: StreamsStorage,
+    constructor(private markerLanesStorage: MarkerLanesStorage,
                 private changeDetector: ChangeDetectorRef) {
     }
 
     ngOnInit() {
-        this.streamsStorage.select().subscribe(
-            streams => {
-                this.streams = streams;
+        this.markerLanesStorage.select().subscribe(
+            markerLanes => {
+                this.markerLanes = markerLanes;
                 this.changeDetector.detectChanges();
             }
         )

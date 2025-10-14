@@ -10,15 +10,15 @@ import {MarkerTooltipDirective} from "./ui/marker/marker-tooltip/marker-tooltip.
 import {TagComponent} from "./ui/tag/tag.component";
 import {GroupingMarkerComponent} from "./ui/marker/grouping-marker/grouping-marker.component";
 import {MarkerComponent} from "./ui/marker/marker-component";
-import {PanelComponent} from "./app/panel/panel.component";
+import {GraphComponent} from "./app/graph/graph.component";
 import {VerticalSplitPaneComponent} from "./ui/vertical-split-pane/vertical-split-pane.component";
-import {StreamTimelineComponent} from "./ui/stream-timeline/stream-timeline.component";
+import {MarkerLaneComponent} from "./ui/stream-timeline/marker-lane.component";
 
 @NgModule({
     declarations: [
         TimelineComponent,
-        StreamTimelineComponent,
-        PanelComponent,
+        MarkerLaneComponent,
+        GraphComponent,
         XIconComponent,
         XMarkerComponent,
         MarkerTooltipComponent,
@@ -34,7 +34,7 @@ import {StreamTimelineComponent} from "./ui/stream-timeline/stream-timeline.comp
         MatIconModule
     ],
     exports: [
-        PanelComponent
+        GraphComponent
     ]
 })
 export class RxVisionModule {
