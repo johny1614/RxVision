@@ -1,38 +1,31 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {Emissions} from "../app/emission/Emissions.model";
-import {Emission} from "../app/emission/emission.model";
+import {Emission} from "./emission.model";
+import {TimePoint} from "../app/time-point/TimePoint";
+import {TimePoints} from "../app/time-point/TimePoints";
 
 @Injectable({
     providedIn: 'root'
 })
 export class UiApiService {
-    emissions: Emissions = {};
-    private emissionsSubject$: BehaviorSubject<Emissions> = new BehaviorSubject<any>([]);
-    public emissions$: Observable<Emissions> = this.emissionsSubject$.asObservable();
-
+    timePoints: TimePoints = {};
+    private timePointsSubject$: BehaviorSubject<TimePoints> = new BehaviorSubject<any>([]);
+    public timePoints$: Observable<TimePoints> = this.timePointsSubject$.asObservable();
 
     addEmission(emission: Emission, streamId: string) {
-        if (this.emissions[streamId]) {
-            this.emissions[streamId].push(emission);
+        const timePoint: TimePoint = emission.toTimePoint();
+        const laneId = streamId;
+        if (this.timePoints[laneId]) {
+            this.timePoints[laneId].push(timePoint);
         } else {
-            this.emissions[streamId] = [emission];
+            this.timePoints[laneId] = [timePoint];
         }
-        this.emissionsSubject$.next(this.emissions);
+        this.timePointsSubject$.next(this.timePoints);
     }
 
     clearEmissions(): void {
-        this.emissions = {};
-        this.emissionsSubject$.next(this.emissions);
-    }
-
-    addDeveloperEmission(emission: Emission, streamId: string) {
-        if (this.emissions[streamId]) {
-            this.emissions[streamId].push(emission);
-        } else {
-            this.emissions[streamId] = [emission];
-        }
-        this.emissionsSubject$.next(this.emissions);
+        this.timePoints = {};
+        this.timePointsSubject$.next(this.timePoints);
     }
 
     emitEmissionClick(value: any) {

@@ -31,13 +31,13 @@ export class DevAppComponent {
         this.A$.subscribe(value => {
             const time = Date.now() - startTime;
             const emission = new Emission(value, `time: ${time} value: ${value} `, time);
-            this.uiApiService.addDeveloperEmission(emission, 'Salary$');
+            this.uiApiService.addEmission(emission, 'Salary$');
         });
         this.B$.subscribe(value => {
             const time = Date.now() - startTime;
             const emission = new Emission(value, `time: ${time} value: ${value} \n`, time);
             console.log('emission B', emission.time);
-            this.uiApiService.addDeveloperEmission(emission, 'Rent$');
+            this.uiApiService.addEmission(emission, 'Rent$');
         });
 
         this.combinedAB$.subscribe(([a, b]) => {
@@ -47,7 +47,7 @@ export class DevAppComponent {
                 `time: ${time} Weather: ${a}, Rent: ${b}`,
                 time
             );
-            this.uiApiService.addDeveloperEmission(emission, 'combined');
+            this.uiApiService.addEmission(emission, 'combined');
         });
 
     }

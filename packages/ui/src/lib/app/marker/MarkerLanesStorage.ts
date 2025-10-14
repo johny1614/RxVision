@@ -14,9 +14,9 @@ export class MarkerLanesStorage {
   select(): Observable<MarkerLane[]> {
     const colors = Object.values(Color);
     return this.markersStorage.select().pipe(
-      map(emissionMarkers =>
-        Object.keys(emissionMarkers).map((id, i) =>
-          new MarkerLane(emissionMarkers[id], colors[i % colors.length], id)
+      map(markers =>
+        Object.keys(markers).map((id, i) =>
+          new MarkerLane(markers[id], colors[i % colors.length], id)
         )
       )
     );

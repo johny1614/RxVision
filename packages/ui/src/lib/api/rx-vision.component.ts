@@ -1,5 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {RxVisionModule} from "./rx-vision.module";
+import {RxVisionModule} from "../rx-vision.module";
 
 @Component({
     selector: 'rx-vision',

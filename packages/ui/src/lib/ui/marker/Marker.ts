@@ -1,15 +1,15 @@
-import {PositionedEmission} from "../../app/emission/position/PositionedEmission";
+import {PositionedTimePoint} from "../../app/time-point/PositionedTimePoint";
 
 export class Marker {
-  constructor(
-    public readonly position: number,
-    public readonly time: number,
-    public readonly value: unknown,
-    public readonly displayValue: string
-  ) {
-  }
+    constructor(
+        public readonly position: number,
+        public readonly time: number,
+        public readonly value: unknown,
+        public readonly displayValue: string
+    ) {
+    }
 
-  static fromPositionedEmission(positionedEmission: PositionedEmission): Marker {
-    return new Marker(positionedEmission.position, positionedEmission.time, positionedEmission.value, positionedEmission.displayValue);
-  }
+    static fromPositionedPoint(positionedPoint: PositionedTimePoint): Marker {
+        return new Marker(positionedPoint.position, positionedPoint.time, positionedPoint.value, positionedPoint.displayValue);
+    }
 }

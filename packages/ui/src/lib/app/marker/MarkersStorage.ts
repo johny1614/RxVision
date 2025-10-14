@@ -1,31 +1,31 @@
 import {Injectable} from "@angular/core";
 import {map, Observable} from "rxjs";
 import {Marker} from "../../ui/marker/Marker";
-import {PositionedEmissionsStorage} from "../emission/PositionedEmissionsStorage";
-import {PositionedEmission} from "../emission/position/PositionedEmission";
-import {MarkersResolver} from "../emission/MarkersResolver";
+import {PositionedTimePointsStorage} from "../time-point/PositionedTimePointsStorage";
+import {MarkersResolver} from "./MarkersResolver";
+import {PositionedTimePoints} from "../time-point/PositionedTimePoints";
 
 @Injectable({providedIn: 'root'})
 export class MarkersStorage {
 
-  constructor(
-    private readonly positionedEmissionsStorage: PositionedEmissionsStorage,
-    private readonly markersResolver: MarkersResolver,
-  ) {
-  }
+    constructor(
+        private readonly positionedTimePointsStorage: PositionedTimePointsStorage,
+        private readonly markersResolver: MarkersResolver,
+    ) {
+    }
 
-  select(): Observable<{ [streamId: string]: Array<Marker> }> {
-    return this.positionedEmissionsStorage.select().pipe(
-      map((positionedEmissions: { [streamId: string]: Array<PositionedEmission> }) => {
-        const streamsMarkers = {};
-        Object.entries(positionedEmissions).forEach(([streamId, positionedEmissions]) => {
-          const markers = this.markersResolver.resolve(positionedEmissions);
-          streamsMarkers[streamId] = [
-            ...(streamsMarkers[streamId] || []),
-            ...markers
-          ];
-        });
-        return streamsMarkers;
-      }));
-  }
+    select(): Observable<{ [laneId: string]: Array<Marker> }> {
+        return this.positionedTimePointsStorage.select().pipe(
+            map((positionedTimePoints: PositionedTimePoints) => {
+                const lanesMarkers = {};
+                Object.entries(positionedTimePoints).forEach(([laneId, lanePositionedTimePoints]) => {
+                    const markers = this.markersResolver.resolve(lanePositionedTimePoints);
+                    lanesMarkers[laneId] = [
+                        ...(lanesMarkers[laneId] || []),
+                        ...markers
+                    ];
+                });
+                return lanesMarkers;
+            }));
+    }
 }

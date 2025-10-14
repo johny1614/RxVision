@@ -17,11 +17,11 @@ export class TimelineFullRangeSpecificationStorage {
 
   select(): Observable<TimelineFullRangeSpecification> {
     // TODO niech to sie selektuje tylko gdy jest full range wybrany
-    return combineLatest([this.uiApiService.emissions$, this.timelineWidthStorage.timelineAvailableWidthSpaceForTicks$])
+    return combineLatest([this.uiApiService.timePoints$, this.timelineWidthStorage.timelineAvailableWidthSpaceForTicks$])
       .pipe(
-        map(([emissions, timelineWidthSpaceForTicks]) => {
+        map(([timePoints, timelineWidthSpaceForTicks]) => {
           const gap = this.timelineOptimalGapTimeCalculator.resolve(
-            emissions, timelineWidthSpaceForTicks
+            timePoints, timelineWidthSpaceForTicks
           )
           const gapCount = Math.floor(timelineWidthSpaceForTicks / gap.px);
           const endTime = gapCount * gap.time;

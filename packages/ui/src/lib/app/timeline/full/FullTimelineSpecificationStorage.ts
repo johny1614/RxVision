@@ -16,13 +16,13 @@ export class FullTimelineSpecificationStorage {
   }
 
   select(): Observable<TimelineSpecification> {
-    return combineLatest([this.uiApiService.emissions$, this.timelineWidthStorage.timelineAvailableWidthSpaceForTicks$])
+    return combineLatest([this.uiApiService.timePoints$, this.timelineWidthStorage.timelineAvailableWidthSpaceForTicks$])
       .pipe(
-        map(([emissions, timelineWidthSpaceForTicks]) => {
+        map(([timePoints, timelineWidthSpaceForTicks]) => {
           const additionalSpaceForTimelineOverlappingMarkersAndLastTickTittle = 22;
           // TODO make it better ^^ maybe left instead of transform im marker component?
           return this.fullTimelineSpecificationResolver.resolve(
-            emissions, timelineWidthSpaceForTicks - additionalSpaceForTimelineOverlappingMarkersAndLastTickTittle
+            timePoints, timelineWidthSpaceForTicks - additionalSpaceForTimelineOverlappingMarkersAndLastTickTittle
           )
         }),
         shareReplay({bufferSize: 1, refCount: true})
