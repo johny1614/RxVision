@@ -46,10 +46,10 @@ describe('MarkersResolver', () => {
     expect(resolvedMarkers.length).toBe(1);
     const groupingMarker = resolvedMarkers[0];
     expect(groupingMarker instanceof GroupingMarker).toBeTrue();
-    expect((groupingMarker as GroupingMarker).emissions.length).toBe(3);
-    expect((groupingMarker as GroupingMarker).emissions).toContain(positions[0]);
-    expect((groupingMarker as GroupingMarker).emissions).toContain(positions[1]);
-    expect((groupingMarker as GroupingMarker).emissions).toContain(positions[2]);
+    expect((groupingMarker as GroupingMarker).markers.length).toBe(3);
+    expect((groupingMarker as GroupingMarker).markers).toContain(positions[0]);
+    expect((groupingMarker as GroupingMarker).markers).toContain(positions[1]);
+    expect((groupingMarker as GroupingMarker).markers).toContain(positions[2]);
   });
 
   it('Grouping 2 close markers and space for another nested in 3 and another is alone setting it with avg position', () => {
@@ -63,13 +63,13 @@ describe('MarkersResolver', () => {
     expect(resolvedMarkers.length).toBe(3);
     const groupingMarker1 = resolvedMarkers[0];
     expect(groupingMarker1 instanceof GroupingMarker).toBeTrue();
-    expect((groupingMarker1 as GroupingMarker).emissions.length).toBe(2);
-    expect((groupingMarker1 as GroupingMarker).emissions.map(m => m.position)).toEqual(group1Positions);
+    expect((groupingMarker1 as GroupingMarker).markers.length).toBe(2);
+    expect((groupingMarker1 as GroupingMarker).markers.map(m => m.position)).toEqual(group1Positions);
     expect(groupingMarker1.position).toBe(group1Positions[0]);
     const groupingMarker2 = resolvedMarkers[1];
     expect(groupingMarker2 instanceof GroupingMarker).toBeTrue();
-    expect((groupingMarker2 as GroupingMarker).emissions.length).toBe(3);
-    expect((groupingMarker2 as GroupingMarker).emissions.map(m => m.position)).toEqual(group2Positions);
+    expect((groupingMarker2 as GroupingMarker).markers.length).toBe(3);
+    expect((groupingMarker2 as GroupingMarker).markers.map(m => m.position)).toEqual(group2Positions);
     expect(groupingMarker2.position).toBe(group2Positions[0]);
     const aloneMarker = resolvedMarkers[2];
     expect(aloneMarker instanceof Marker).toBeTrue();
@@ -86,13 +86,13 @@ describe('MarkersResolver', () => {
     expect(resolvedMarkers.length).toBe(2);
     const groupingMarker1 = resolvedMarkers[0];
     expect(groupingMarker1 instanceof GroupingMarker).toBeTrue();
-    expect((groupingMarker1 as GroupingMarker).emissions.length).toBe(4);
-    expect((groupingMarker1 as GroupingMarker).emissions.map(m => m.position)).toEqual(group1Positions);
+    expect((groupingMarker1 as GroupingMarker).markers.length).toBe(4);
+    expect((groupingMarker1 as GroupingMarker).markers.map(m => m.position)).toEqual(group1Positions);
     expect(groupingMarker1.position).toBe(group1Positions[0]);
     const groupingMarker2 = resolvedMarkers[1];
     expect(groupingMarker2 instanceof GroupingMarker).toBeTrue();
-    expect((groupingMarker2 as GroupingMarker).emissions.length).toBe(2);
-    expect((groupingMarker2 as GroupingMarker).emissions.map(m => m.position)).toEqual(group2Positions);
+    expect((groupingMarker2 as GroupingMarker).markers.length).toBe(2);
+    expect((groupingMarker2 as GroupingMarker).markers.map(m => m.position)).toEqual(group2Positions);
     expect(groupingMarker2.position).toBe(group2Positions[0]);
   });
   //
@@ -111,13 +111,13 @@ describe('MarkersResolver', () => {
     expect((resolvedMarkers[0] as Marker).position).toEqual(group1[0]);
 
     expect((resolvedMarkers[1] as GroupingMarker).position).toBe((group2[0]));
-    expect((resolvedMarkers[1] as GroupingMarker).emissions.map(m => m.position)).toEqual(group2);
+    expect((resolvedMarkers[1] as GroupingMarker).markers.map(m => m.position)).toEqual(group2);
 
     expect((resolvedMarkers[2] as GroupingMarker).position).toBe((group3[0]));
-    expect((resolvedMarkers[2] as GroupingMarker).emissions.map(m => m.position)).toEqual(group3);
+    expect((resolvedMarkers[2] as GroupingMarker).markers.map(m => m.position)).toEqual(group3);
 
     expect((resolvedMarkers[3] as GroupingMarker).position).toBe((group4[0]));
-    expect((resolvedMarkers[3] as GroupingMarker).emissions.map(m => m.position)).toEqual(group4);
+    expect((resolvedMarkers[3] as GroupingMarker).markers.map(m => m.position)).toEqual(group4);
   });
 });
 

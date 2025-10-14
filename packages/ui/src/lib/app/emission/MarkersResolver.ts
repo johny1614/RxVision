@@ -12,20 +12,21 @@ export class MarkersResolver {
     const sortedEmissions = positionedEmissions.sort((a, b) => a.position - b.position);
     for (let i = 0; i < sortedEmissions.length; i++) {
       const currentEmission = sortedEmissions[i];
+      const currentMarker = Marker.fromPositionedEmission(currentEmission);
       if (i === 0) {
-        markers.push(Marker.fromPositionedEmission(currentEmission));
+        markers.push(currentMarker);
         continue;
       }
       const previousMarker: Marker = markers[markers.length - 1];
       if (this.shouldJoinPreviousMarker(currentEmission.position, previousMarker.position)) {
         if (previousMarker instanceof GroupingMarker) {
-          previousMarker.emissions.push(currentEmission);
-          markers[markers.length - 1] = new GroupingMarker([...previousMarker.emissions, currentEmission]);
+          previousMarker.markers.push(currentEmission);
+          markers[markers.length - 1] = new GroupingMarker([...previousMarker.markers, currentMarker]);
         } else {
-          markers[markers.length - 1] = new GroupingMarker([PositionedEmission.fromMarker(previousMarker), currentEmission]);
+          markers[markers.length - 1] = new GroupingMarker([PositionedEmission.fromMarker(previousMarker), currentMarker]);
         }
       } else {
-        markers.push(Marker.fromPositionedEmission(currentEmission));
+        markers.push(currentMarker);
       }
     }
     return markers;
