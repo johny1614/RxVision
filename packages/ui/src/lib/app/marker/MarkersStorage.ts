@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {map, Observable} from "rxjs";
 import {Marker} from "../../ui/marker/Marker";
-import {EmissionsStorage} from "../emission/EmissionsStorage";
+import {PositionedEmissionsStorage} from "../emission/PositionedEmissionsStorage";
 import {PositionedEmission} from "../emission/position/PositionedEmission";
 import {MarkersResolver} from "../emission/MarkersResolver";
 
@@ -9,13 +9,13 @@ import {MarkersResolver} from "../emission/MarkersResolver";
 export class MarkersStorage {
 
   constructor(
-    private readonly emissionsStorage: EmissionsStorage,
+    private readonly positionedEmissionsStorage: PositionedEmissionsStorage,
     private readonly markersResolver: MarkersResolver,
   ) {
   }
 
   select(): Observable<{ [streamId: string]: Array<Marker> }> {
-    return this.emissionsStorage.select().pipe(
+    return this.positionedEmissionsStorage.select().pipe(
       map((positionedEmissions: { [streamId: string]: Array<PositionedEmission> }) => {
         const streamsMarkers = {};
         Object.entries(positionedEmissions).forEach(([streamId, positionedEmissions]) => {

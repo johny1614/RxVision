@@ -3,9 +3,9 @@
     <div [style.height.px]="timelineHeight"></div>
     @for (markerLane of markerLanes; track markerLane.id) {
       <app-tag
-        [style.height.px]="streamNameHeightPx + streamNamesMarginBetweenPx"
+        [style.height.px]="markerLaneNameHeightPx + markerLaneNamesMarginBetweenPx"
         style="display:block; position: relative"
-        [heightPx]="streamNameHeightPx"
+        [heightPx]="markerLaneNameHeightPx"
         [text]="markerLane.id" [color]="markerLane.color"></app-tag>
     }
   </div>

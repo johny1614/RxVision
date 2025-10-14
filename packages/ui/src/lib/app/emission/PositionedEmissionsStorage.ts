@@ -1,13 +1,13 @@
 import {Injectable} from "@angular/core";
 import {TimelineSpecificationStorage} from "../timeline/TimelineSpecificationStorage";
-import {combineLatest, map, Observable, tap} from "rxjs";
-import {Marker} from "../../ui/marker/Marker";
+import {combineLatest, map, Observable} from "rxjs";
 import {PositionedEmissionsResolver} from "./position/PositionedEmissionsResolver";
 import {UiApiService} from "../../api/ui-api.service";
+import {PositionedEmission} from "./position/PositionedEmission";
 
 
 @Injectable({providedIn: 'root'})
-export class EmissionsStorage {
+export class PositionedEmissionsStorage {
 
   constructor(
     private readonly uiApiService: UiApiService,
@@ -16,8 +16,7 @@ export class EmissionsStorage {
   ) {
   }
 
-  select(): Observable<{ [streamId: string]: Array<Marker> }> {
-    //   TODO - MarkersStorage combine within
+  select(): Observable<{ [streamId: string]: Array<PositionedEmission> }> {
     return combineLatest([
       this.uiApiService.emissions$,
       this.activeTimelineSpecificationStorage.selectActive()

@@ -8,7 +8,7 @@ ui-marker-lane::after {
   top: 50%;
   left: 0;
   right: 0;
-  border-bottom: 2px dashed var(--stream-color, rgba(0, 0, 0, 0.2)); /* fallback */
+  border-bottom: 2px dashed var(--marker-lane-color, rgba(0, 0, 0, 0.2)); /* fallback */
   opacity: 0.3;
   transform: translateY(-50%);
   pointer-events: none;

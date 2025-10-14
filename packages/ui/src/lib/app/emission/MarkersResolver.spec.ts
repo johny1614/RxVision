@@ -4,7 +4,7 @@ import {MarkersResolver} from "./MarkersResolver";
 import {Marker} from "../../ui/marker/Marker";
 import {markerWidthPx} from "../../ui/uiConsts";
 
-describe('StreamMarkersResolver', () => {
+describe('MarkersResolver', () => {
   let resolver: MarkersResolver;
 
   beforeEach(() => {

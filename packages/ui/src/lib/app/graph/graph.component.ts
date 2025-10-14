@@ -11,7 +11,7 @@ import {
 import {TimelineComponent} from "../timeline/timeline.component";
 import {MarkerLanesStorage} from "../marker/MarkerLanesStorage";
 import {MarkerLane} from "../marker/MarkerLane";
-import {markerWidthPx, streamNameHeightPx, streamNamesMarginBetweenPx} from "../../ui/uiConsts";
+import {markerWidthPx, markerLaneNameHeightPx, markerLaneNamesMarginBetweenPx} from "../../ui/uiConsts";
 
 @Component({
     selector: 'ui-graph',
@@ -26,7 +26,7 @@ export class GraphComponent implements OnInit, AfterViewInit {
 
     @HostBinding('style.--tag-height.px')
     get getTagHeight() {
-        return streamNameHeightPx;
+        return markerLaneNameHeightPx;
     }
 
     @HostBinding('style.--right-graph-margin-left.px')
@@ -40,8 +40,8 @@ export class GraphComponent implements OnInit, AfterViewInit {
     @ViewChild('timelineRightPane')
     timelineRightPaneRef!: ElementRef<HTMLElement>;
 
-    readonly streamNamesMarginBetweenPx = streamNamesMarginBetweenPx;
-    readonly streamNameHeightPx = streamNameHeightPx;
+    readonly markerLaneNamesMarginBetweenPx = markerLaneNamesMarginBetweenPx;
+    readonly markerLaneNameHeightPx = markerLaneNameHeightPx;
     timelineHeight: number = 0;
     markerLanes: Array<MarkerLane>;
 

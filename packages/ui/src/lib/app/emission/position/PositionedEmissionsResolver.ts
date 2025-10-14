@@ -11,7 +11,6 @@ export class PositionedEmissionsResolver {
   constructor(
     private readonly timelinePositionService: TimelinePositionService
   ) {
-    // TODO - to nie musi znac nazwy streamow for sure
   }
 
   resolve(emissions: Emissions, activeTimelineSpecification: TimelineSpecification): {

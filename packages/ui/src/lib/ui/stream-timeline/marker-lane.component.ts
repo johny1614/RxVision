@@ -1,5 +1,5 @@
 import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {markerWidthPx, streamHeightPx} from "../../ui/uiConsts";
+import {markerWidthPx, markerLaneHeightPx} from "../../ui/uiConsts";
 import {MarkerLane} from "../../app/marker/MarkerLane";
 
 @Component({
@@ -7,7 +7,7 @@ import {MarkerLane} from "../../app/marker/MarkerLane";
     templateUrl: './marker-lane.component.html',
     styleUrls: ['./marker-lane.component.css'],
     encapsulation: ViewEncapsulation.None,
-    host: {'[style.--stream-color]': 'markerLane?.color'},
+    host: {'[style.--marker-lane-color]': 'markerLane?.color'},
     standalone: false
 })
 export class MarkerLaneComponent {
@@ -16,7 +16,7 @@ export class MarkerLaneComponent {
     markerLane: MarkerLane;
 
     @HostBinding('style.height.px') get hostHeight() {
-        return streamHeightPx;
+        return markerLaneHeightPx;
     }
 
     getMarkerTranslateXPosition(markerPosition: number) {

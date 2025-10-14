@@ -1,6 +1,6 @@
-export const streamHeightPx: number = 24;
-export const streamNamesMarginBetweenPx: number = 4;
-export const streamNameHeightPx: number = streamHeightPx - streamNamesMarginBetweenPx;
+export const markerLaneHeightPx: number = 24;
+export const markerLaneNamesMarginBetweenPx: number = 4;
+export const markerLaneNameHeightPx: number = markerLaneHeightPx - markerLaneNamesMarginBetweenPx;
 export const markerHeightPx: number = 16;
 export const markerWidthPx: number = 16;
 
