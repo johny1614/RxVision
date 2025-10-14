@@ -8,6 +8,10 @@ export class Emission {
     ) {
     }
 
+    static fromRaw(raw: any): Emission {
+        return new Emission(raw.value, raw.displayValue, raw.time);
+    }
+
     toTimePoint(): TimePoint {
         return new TimePoint(this.time, this.value, this.displayValue);
     }

@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {RxVisionComponent, UiApiService} from "ui";
+import {Emission, RxVisionComponent, UiApiService} from "ui";
 import {EmissionMessage} from "../message/emission-message";
 import {MessageType} from "../message/MessageType";
 import {SessionIdMessage} from "../message/SessionIdMessage";
+
 declare const chrome: any;
 
 @Component({
@@ -35,7 +36,7 @@ export class ChromeExtensionUiHostAppComponent {
         }
         if ([MessageType.EMISSION, MessageType.EMISSION_FROM_IFRAME].includes(message.type)
             && this.sessionId === (message as EmissionMessage).sessionId) {
-            const emission = (message as EmissionMessage).emission;
+            const emission = Emission.fromRaw((message as EmissionMessage).emission);
             const streamId = (message as EmissionMessage).streamId;
             this.uiApiService.addEmission(emission, streamId);
         }
