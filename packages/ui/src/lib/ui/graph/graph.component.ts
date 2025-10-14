@@ -9,9 +9,9 @@ import {
     ViewEncapsulation
 } from "@angular/core";
 import {TimelineComponent} from "../timeline/timeline.component";
-import {MarkerLanesStorage} from "../marker/MarkerLanesStorage";
-import {MarkerLane} from "../marker/MarkerLane";
-import {markerWidthPx, markerLaneNameHeightPx, markerLaneNamesMarginBetweenPx} from "../../ui/uiConsts";
+import {MarkerLanesStorage} from "../marker-lane/MarkerLanesStorage";
+import {MarkerLane} from "../marker-lane/MarkerLane";
+import {markerWidthPx, markerLaneNameHeightPx, markerLaneNamesMarginBetweenPx} from "../layoutContants";
 
 @Component({
     selector: 'ui-graph',

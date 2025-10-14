@@ -1,6 +1,6 @@
 import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
-import {markerWidthPx, markerLaneHeightPx} from "../../ui/uiConsts";
-import {MarkerLane} from "../../app/marker/MarkerLane";
+import {markerWidthPx, markerLaneHeightPx} from "../layoutContants";
+import {MarkerLane} from "./MarkerLane";
 
 @Component({
     selector: 'ui-marker-lane',

@@ -1,4 +1,4 @@
-import {PositionedTimePoint} from "../../app/time-point/PositionedTimePoint";
+import {PositionedTimePoint} from "../time-point/PositionedTimePoint";
 
 export class Marker {
     constructor(

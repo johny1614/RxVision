@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
-import {Marker} from "../../ui/marker/Marker";
-import {GroupingMarker} from "../../ui/marker/grouping-marker/GroupingMarker";
-import {markerWidthPx} from "../../ui/uiConsts";
+import {Marker} from "./Marker";
+import {GroupingMarker} from "./grouping-marker/GroupingMarker";
+import {markerWidthPx} from "../layoutContants";
 import {PositionedTimePoint} from "../time-point/PositionedTimePoint";
 
 @Injectable({providedIn: 'root'})

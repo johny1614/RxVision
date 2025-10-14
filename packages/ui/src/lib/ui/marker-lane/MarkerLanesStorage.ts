@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {map, Observable} from "rxjs";
 import {MarkerLane} from "./MarkerLane";
-import {Color} from "../../ui/Color";
-import {MarkersStorage} from "./MarkersStorage";
+import {Color} from "../Color";
+import {MarkersStorage} from "../marker/MarkersStorage";
 
 @Injectable({providedIn: 'root'})
 export class MarkerLanesStorage {

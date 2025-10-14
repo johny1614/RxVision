@@ -1,7 +1,7 @@
-import {GroupingMarker} from "../../ui/marker/grouping-marker/GroupingMarker";
+import {GroupingMarker} from "./grouping-marker/GroupingMarker";
 import {MarkersResolver} from "./MarkersResolver";
-import {Marker} from "../../ui/marker/Marker";
-import {markerWidthPx} from "../../ui/uiConsts";
+import {Marker} from "./Marker";
+import {markerWidthPx} from "../layoutContants";
 import {PositionedTimePoint} from "../time-point/PositionedTimePoint";
 
 describe('MarkersResolver', () => {

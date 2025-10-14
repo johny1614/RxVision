@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {map, Observable} from "rxjs";
-import {Marker} from "../../ui/marker/Marker";
+import {Marker} from "./Marker";
 import {PositionedTimePointsStorage} from "../time-point/PositionedTimePointsStorage";
 import {MarkersResolver} from "./MarkersResolver";
 import {PositionedTimePoints} from "../time-point/PositionedTimePoints";

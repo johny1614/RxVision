@@ -1,6 +1,6 @@
 import {Component, HostBinding, Input, ViewEncapsulation} from "@angular/core";
 import {GroupingMarker} from "./GroupingMarker";
-import {markerWidthPx} from "../../uiConsts";
+import {markerWidthPx} from "../../layoutContants";
 
 @Component({
     selector: 'app-grouping-marker',

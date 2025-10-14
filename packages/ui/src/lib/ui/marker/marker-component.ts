@@ -2,7 +2,7 @@ import {Component, HostBinding, Input, ViewEncapsulation} from "@angular/core";
 import {Marker} from "./Marker";
 import {Color} from "../Color";
 import {GroupingMarker} from "./grouping-marker/GroupingMarker";
-import {markerHeightPx, markerWidthPx} from "../uiConsts";
+import {markerHeightPx, markerWidthPx} from "../layoutContants";
 
 @Component({
     selector: 'app-marker',

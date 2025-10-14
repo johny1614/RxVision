@@ -2,7 +2,7 @@ import {Component, ElementRef, HostBinding, Input, ViewChild, ViewEncapsulation}
 import {Marker} from "../Marker";
 import {XIconComponent} from "./x-icon/x-icon.component";
 import {Color} from "../../Color";
-import {markerWidthPx} from "../../uiConsts";
+import {markerWidthPx} from "../../layoutContants";
 
 @Component({
     selector: 'app-x-marker',

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Emission} from "./emission.model";
-import {TimePoint} from "../app/time-point/TimePoint";
-import {TimePoints} from "../app/time-point/TimePoints";
+import {TimePoint} from "../ui/time-point/TimePoint";
+import {TimePoints} from "../ui/time-point/TimePoints";
 
 @Injectable({
     providedIn: 'root'

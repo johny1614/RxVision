@@ -1,5 +1,5 @@
-import {Marker} from "../../ui/marker/Marker";
-import {Color} from "../../ui/Color";
+import {Marker} from "../marker/Marker";
+import {Color} from "../Color";
 
 export class MarkerLane {
     constructor(public markers: Array<Marker>,

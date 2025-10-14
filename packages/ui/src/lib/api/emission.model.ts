@@ -1,4 +1,4 @@
-import {TimePoint} from "../app/time-point/TimePoint";
+import {TimePoint} from "../ui/time-point/TimePoint";
 
 export class Emission {
     constructor(
