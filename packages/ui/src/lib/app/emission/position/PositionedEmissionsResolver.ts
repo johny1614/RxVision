@@ -1,8 +1,8 @@
 import {Emissions} from "../Emissions.model";
 import {Injectable} from "@angular/core";
 import {Marker} from "../../../ui/marker/Marker";
-import {TimelinePositionService} from "../../timeline/new/TimelinePositionService";
-import {TimelineSpecification} from "../../timeline/new/TimelineSpecification";
+import {TimelinePositionService} from "../../timeline/TimelinePositionService";
+import {TimelineSpecification} from "../../timeline/TimelineSpecification";
 import {PositionedEmission} from "./PositionedEmission";
 
 @Injectable({providedIn: 'root'})

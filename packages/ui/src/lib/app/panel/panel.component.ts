@@ -8,7 +8,7 @@ import {
     ViewChild,
     ViewEncapsulation
 } from "@angular/core";
-import {TimelineComponent} from "../timeline/new/timeline.component";
+import {TimelineComponent} from "../timeline/timeline.component";
 import {StreamsStorage} from "../stream/StreamsStorage";
 import {Stream} from "../stream/Stream";
 import {markerWidthPx, streamNameHeightPx, streamNamesMarginBetweenPx} from "../../ui/uiConsts";

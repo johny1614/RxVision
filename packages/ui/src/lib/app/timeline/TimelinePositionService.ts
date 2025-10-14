@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {map, Observable} from "rxjs";
 import {TimelineWidthStorage} from "./TimelineWidthStorage";
-import {TimelineRange} from "../timeline-range";
+import {TimelineRange} from "./timeline-range";
 
 @Injectable({providedIn: 'root'})
 export class TimelinePositionService {

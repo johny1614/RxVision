@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {TimelineRange} from "../timeline-range";
+import {TimelineRange} from "./timeline-range";
 import {combineLatest, map, Observable, Subject, take} from "rxjs";
 import {TimelineFullRangeStorage} from "./full/TimelineFullRangeStorage";
 import {ChosenTimelinesStorage} from "./chosen/ChosenTimelinesStorage";

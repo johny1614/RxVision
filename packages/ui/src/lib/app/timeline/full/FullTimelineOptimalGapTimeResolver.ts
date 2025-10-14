@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Emissions} from "../../../emission/Emissions.model";
+import {Emissions} from "../../emission/Emissions.model";
 import {TimelineGap} from "../TimelineGap";
 
 @Injectable({providedIn: 'root'})

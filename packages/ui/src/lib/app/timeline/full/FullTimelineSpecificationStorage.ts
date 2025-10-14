@@ -3,7 +3,7 @@ import {combineLatest, map, Observable, shareReplay} from "rxjs";
 import {TimelineWidthStorage} from "../TimelineWidthStorage";
 import {FullTimelineSpecificationResolver} from "./FullTimelineSpecificationResolver";
 import {Injectable} from "@angular/core";
-import {UiApiService} from "../../../../api/ui-api.service";
+import {UiApiService} from "../../../api/ui-api.service";
 
 @Injectable({providedIn: "root"})
 export class FullTimelineSpecificationStorage {

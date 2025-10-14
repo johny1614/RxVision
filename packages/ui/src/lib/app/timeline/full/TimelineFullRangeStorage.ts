@@ -1,5 +1,5 @@
 import {map, Observable} from "rxjs";
-import {TimelineRange} from "../../timeline-range";
+import {TimelineRange} from "../timeline-range";
 import {Injectable} from "@angular/core";
 import {TimelineFullRangeSpecificationStorage} from "./TimelineFullRangeSpecificationStorage";
 import {TimelineFullRangeSpecification} from "./TimelineFullRangeSpecification";

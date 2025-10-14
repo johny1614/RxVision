@@ -3,7 +3,7 @@ import {TimelineWidthStorage} from "../TimelineWidthStorage";
 import {FullTimelineOptimalGapTimeResolver} from "./FullTimelineOptimalGapTimeResolver";
 import {combineLatest, map, Observable, shareReplay} from "rxjs";
 import {TimelineFullRangeSpecification} from "./TimelineFullRangeSpecification";
-import {UiApiService} from "../../../../api/ui-api.service";
+import {UiApiService} from "../../../api/ui-api.service";
 
 @Injectable({providedIn: 'root'})
 export class TimelineFullRangeSpecificationStorage {

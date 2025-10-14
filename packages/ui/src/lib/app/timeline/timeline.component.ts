@@ -11,9 +11,9 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {combineLatest, Observable, take} from "rxjs";
-import {TimelineRange} from "../timeline-range";
+import {TimelineRange} from "./timeline-range";
 import {TimelinesService} from "./TimelinesService";
-import {TimelineRectangle} from "../timeline-rectangle";
+import {TimelineRectangle} from "./timeline-rectangle";
 import {TimelineWidthStorage} from "./TimelineWidthStorage";
 import {TimelinePositionService} from "./TimelinePositionService";
 import {ChosenTimelinesStorage} from "./chosen/ChosenTimelinesStorage";

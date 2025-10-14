@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {TimelineSpecification} from "../TimelineSpecification";
-import {TimelineRange} from "../../timeline-range";
+import {TimelineRange} from "../timeline-range";
 import {ChosenTimelineOptimalGapTimeResolver} from "./ChosenTimelineOptimalGapTimeResolver";
 import {ChosenTimelineTicksResolver} from "./ChosenTimelineTicksResolver";
 import {Tick} from "../Tick";

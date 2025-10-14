@@ -1,4 +1,4 @@
-import {TimelineRange} from "../../timeline-range";
+import {TimelineRange} from "../timeline-range";
 import {BehaviorSubject, Observable, shareReplay} from "rxjs";
 import {Injectable} from "@angular/core";
 

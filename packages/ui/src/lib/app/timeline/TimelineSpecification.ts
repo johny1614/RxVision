@@ -1,4 +1,4 @@
-import {TimelineRange} from "../timeline-range";
+import {TimelineRange} from "./timeline-range";
 import {Tick} from "./Tick";
 
 export class TimelineSpecification {
