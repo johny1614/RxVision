@@ -21,7 +21,7 @@ export class PositionedTimePointsResolver {
         Object.entries(timePoints).forEach(([laneId, lanePoints]) => {
             const updatedPositionedLanePoints = lanePoints.map((timePoint: TimePoint) => {
                 const position = this.timelinePositionService.getPositionByTime(timePoint.time, range, lastTickPosition);
-                return new PositionedTimePoint(position, timePoint.value, timePoint.displayValue, timePoint.time)
+                return new PositionedTimePoint(timePoint.time, timePoint.value, timePoint.displayValue, position)
             });
             positionedPoints[laneId] = [
                 ...(positionedPoints[laneId] || []),
