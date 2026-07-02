@@ -15,14 +15,14 @@ Coming soon (demo video will be added here)
 
 ## StackBlitz demo
 
-1. Make sure you have RxVision extension installed from [Chrome Web Store](https://chrome.google.com/webstore/detail/rxvision-rxjs-streams-v/ldgfbffkpkdmdmflfjdlnaclhkmjblmd)
+1. Make sure you have RxVision extension installed from [Chrome Web Store](https://chromewebstore.google.com/detail/rxjs-visualizer-%E2%80%93-rxvisio/mmldaaeidfoohagldamphlnkcodcedil)
 2. Open [this StackBlitz demo project](https://stackblitz.com/edit/vitejs-vite-txfkgfrf?file=src%2Fmain.ts)
 3. Open Chrome DevTools (F12) and navigate to RxVision tab
 4. There you go! You can see emissions from the demo project in real time.
 
 ## Basic usage in your project
 
-1. Make sure you have RxVision extension installed from [Chrome Web Store](https://chrome.google.com/webstore/detail/rxvision-rxjs-streams-v/ldgfbffkpkdmdmflfjdlnaclhkmjblmd)
+1. Make sure you have RxVision extension installed from [Chrome Web Store](https://chromewebstore.google.com/detail/rxjs-visualizer-%E2%80%93-rxvisio/mmldaaeidfoohagldamphlnkcodcedil)
 2. Install the library in your project with one of these commands:
 
    ```bash
